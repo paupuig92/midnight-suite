@@ -14,7 +14,7 @@ Mac con Apple Silicon (M1 o posterior) · macOS 14 o posterior · se actualiza s
 
 ---
 
-Midnight Suite reúne en una sola app todo lo que hace falta en un rodaje o en un festival: **volcar tarjetas con seguridad**, comprobar copias, comprimir y convertir archivos, descargar vídeos, reparar clips que no se abren y mejorar la resolución con la IA de Apple.
+Midnight Suite reúne en una sola app todo lo que hace falta en un rodaje o en un festival: **volcar tarjetas con seguridad**, comprobar copias, comprimir y convertir archivos, descargar vídeos, reparar clips que no se abren, mejorar la resolución con la IA de Apple y **hacer subtítulos para Final Cut**.
 
 Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original nunca se toca**.
 
@@ -26,6 +26,7 @@ Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original n
 - [Compresor](#compresor)
 - [Conversor](#conversor)
 - [Upscaler](#upscaler)
+- [Subtítulos](#subtítulos)
 - [Reparador](#reparador)
 - [Downloader](#downloader)
 - [Informes y actividad](#informes-y-actividad)
@@ -142,6 +143,29 @@ Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligen
 
 ---
 
+## Subtítulos
+
+Hace los **subtítulos automáticamente** y los pone en **Final Cut** como títulos que puedes editar. También saca **SRT** y **TXT** para Premiere, DaVinci, CapCut o YouTube.
+
+![Subtítulos con el editor y la vista previa](docs/img/13-subtitulos.jpg)
+
+1. Arrastra el **proyecto** desde el navegador de Final Cut (o cualquier vídeo o audio).
+2. Elige el idioma (**catalán, castellano o inglés**) y pulsa **Analizar el audio**.
+3. Corrige el texto a la derecha: puedes **partir** (tijeras) o **juntar** subtítulos.
+4. Llévalo a Final Cut:
+   - **Arrastra el clip compuesto** al inicio de la línea de tiempo (00:00). Doble clic para abrirlo; **⇧⌘G** separa los títulos.
+   - **Añadir a la biblioteca**: crea una copia del proyecto con los subtítulos ya puestos.
+
+**Lo que hace por dentro**
+
+- Transcribe con **Whisper** (whisper.cpp) en tu Mac, con la GPU. No se sube nada.
+- Un **detector de voz** salta música y silencios para que no se invente texto.
+- Modelos: **Pequeño** (150 MB), **Mediano** (490 MB) y **Grande** (1,6 GB, el más preciso). Se descargan la primera vez y se comprueba que estén enteros.
+- Reconstruye el audio del montaje a partir del proyecto de Final Cut, con compuestos y audio conectado. Los clips con cambio de velocidad o multicámara se avisan.
+- Títulos **Basic Title** de serie, con tipografía, tamaño, color, contorno, sombra, posición, mayúsculas y resaltado de la palabra que se dice.
+
+---
+
 ## Reparador
 
 Intenta arreglar vídeos y audios que **no se abren**, por ejemplo cuando la cámara se apagó mientras grababa.
@@ -199,6 +223,7 @@ En **Ajustes ⚙︎ › Permisos y complementos** se ve todo lo que necesita la 
 | DIT · Comparador · Downloader · Conversor | 4 GB | 8 GB | — |
 | Compresor · Reparador | 8 GB | 16 GB | ffmpeg (se instala solo) · DaVinci Resolve para BRAW |
 | Upscaler | 8 GB | 16 GB | macOS 26 · chip M3 o Pro/Max/Ultra recomendado |
+| Subtítulos | 8 GB | 16 GB | ffmpeg · modelo de Whisper (se descarga solo) |
 
 **Modo boost 🚀**: el botón del cohete quita las animaciones y el efecto cristal para que la app vaya más ligera (portátiles con batería o que se calientan).
 
