@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "default": "large-v3-turbo",
+  "models": [
+    { "id": "base", "tier": "small", "name": { "ca": "Petit", "es": "Pequeño" },
+      "file": "ggml-base.bin", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin",
+      "bytes": 147951465, "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe" },
+    { "id": "small", "tier": "medium", "name": { "ca": "Mitjà", "es": "Mediano" },
+      "file": "ggml-small.bin", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin",
+      "bytes": 487601967, "sha256": "1be3a9b2063867b937e64e2ec7483364a79917e157fa98c5d94b5c1fffea987b" },
+    { "id": "large-v3-turbo", "tier": "large", "name": { "ca": "Gran", "es": "Grande" },
+      "file": "ggml-large-v3-turbo.bin", "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin",
+      "bytes": 1624555275, "sha256": "1fc70f774d38eb169993ac391eea357ef47c88757ef72ee5943879b7e8e2bc69" },
+    { "id": "silero-v5.1.2", "tier": "vad", "name": { "ca": "Detector de veu", "es": "Detector de voz" },
+      "file": "ggml-silero-v5.1.2.bin", "url": "https://huggingface.co/ggml-org/whisper-vad/resolve/main/ggml-silero-v5.1.2.bin",
+      "bytes": 885098, "sha256": "29940d98d42b91fbd05ce489f3ecf7c72f0a42f027e4875919a28fb4c04ea2cf" }
+  ]
+}
