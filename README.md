@@ -18,18 +18,19 @@ Midnight Suite reúne en una sola app todo lo que hace falta en un rodaje o en u
 
 Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original nunca se toca**.
 
-## Novedades de la versión 1.5
+## Novedades de la versión 1.6
 
-- **DIT mucho más rápido**: verifica un archivo mientras copia el siguiente y lee por adelantado. Las tarjetas con muchos clips y las copias a discos externos son las que más lo notan.
-- **DIT aún más seguro**: si un archivo cambia de tamaño durante la copia, o hay enlaces o rutas que no se pueden leer, la tarjeta **no** se da por buena.
-- **Compresor y Conversor**: conservan todas las pistas de audio y el audio multicanal (FX6, 5.1).
-- **Upscaler**: los PNG mantienen la transparencia y los vídeos de móvil ya no se desincronizan.
-- **Subtítulos**: los proyectos de Final Cut con muchos compuestos ya no congelan la app.
-- En reposo la app casi no consume nada, y los errores salen siempre en castellano o catalán.
+- **Nueva herramienta: Estabilizador.** Estabiliza clips con los datos del giroscopio de la cámara (Gyroflow). Gyroflow se instala desde la propia app.
+- **Conversor**: exporta a **DXV** para Resolume (calidad normal, sin alfa).
+- **Upscaler**: los vídeos con **transparencia** la mantienen (ProRes 4444 o HEVC con alfa), los verticales del móvil ya no salen del revés y se conservan todas las pistas de audio.
+- **DIT**: la copia rápida ya no aparece como verificada, dos tarjetas pueden copiarse a la vez al mismo disco y los informes muestran la hora del lugar donde se copió.
+- **Subtítulos**: los proyectos largos se preparan mucho más rápido (hasta **1 hora** de metraje) y ya no se cuela el audio oculto de clips sincronizados recortados.
+- **Programas externos**: descargar, actualizar y eliminar todos desde Ajustes.
+- Muchas correcciones en el Reparador, el Compresor y el Downloader, y mejor rendimiento con miles de archivos.
 
 ## Índice
 
-- [Novedades de la versión 1.5](#novedades-de-la-versión-15)
+- [Novedades de la versión 1.6](#novedades-de-la-versión-16)
 - [Instalación](#instalación)
 - [DIT · copias de tarjetas](#dit--copias-de-tarjetas)
 - [Comparador](#comparador)
@@ -38,6 +39,7 @@ Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original n
 - [Upscaler](#upscaler)
 - [Subtítulos](#subtítulos)
 - [Reparador](#reparador)
+- [Estabilizador](#estabilizador)
 - [Downloader](#downloader)
 - [Informes y actividad](#informes-y-actividad)
 - [Permisos, complementos y requisitos](#permisos-complementos-y-requisitos)
@@ -135,7 +137,7 @@ Cambia el **tipo de archivo**: de MKV a MP4, de MP3 a WAV, de vídeo a GIF, de H
 
 - **«Sin recodificar»** (en verde): el vídeo de dentro ya es compatible, así que solo se cambia el «envoltorio». Tarda segundos y **no pierde nada de calidad**.
 - **«Recodificando»** (en naranja): se convierte con la máxima calidad usando el chip del Mac.
-- **Vídeo**: MP4 (H.264 o HEVC), MOV, ProRes 422 / HQ / Proxy, MKV, WEBM.
+- **Vídeo**: MP4 (H.264 o HEVC), MOV, ProRes 422 / HQ / Proxy, MKV, WEBM y **DXV** para Resolume (calidad normal, sin alfa).
 - **GIF**: eliges el ancho, los fps y un **peso máximo en MB** (lo reintenta hasta que quepa).
 - **Audio**: WAV, AIFF, FLAC, MP3, AAC y OGG, o sacar solo el audio de un vídeo.
 - **Fotos**: JPG, PNG, HEIC, TIFF y WEBP, conservando el EXIF.
@@ -150,6 +152,7 @@ Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligen
 
 - **Vídeo**: ×2, ×4, a medida o *mejorar a la misma resolución* (ideal para vídeos hechos con IA que se ven blandos en pantallas grandes). También puede pasar de 24 a 60 fps y añadir grano de película.
 - **Fotos**: ×2, ×4 o a medida, con comparación antes / después. Las fotos grandes se procesan por trozos y los PNG **mantienen la transparencia**.
+- Los vídeos con **transparencia** (ProRes 4444 o HEVC con alfa) la mantienen: la app elige sola un formato que la conserve.
 - Antes de empezar, la app calcula **cuánto tardará** cada vídeo.
 
 ---
@@ -160,7 +163,7 @@ Hace los **subtítulos automáticamente** y los pone en **Final Cut** como títu
 
 ![Subtítulos con el editor y la vista previa](docs/img/13-subtitulos.jpg)
 
-1. Arrastra el **proyecto** desde el navegador de Final Cut (o cualquier vídeo o audio).
+1. Arrastra el **proyecto** desde el navegador de Final Cut (o cualquier vídeo o audio), de **1 hora como máximo**. Si es más largo, haz los subtítulos por partes.
 2. Elige el idioma (**catalán, castellano o inglés**) y pulsa **Analizar el audio**.
 3. Corrige el texto a la derecha: puedes **partir** (tijeras) o **juntar** subtítulos.
 4. Llévalo a Final Cut:
@@ -188,6 +191,16 @@ Intenta arreglar vídeos y audios que **no se abren**, por ejemplo cuando la cá
 3. Pulsa **Reparar**: se crea una copia reparada (`nombre_reparado`). El original no se toca.
 
 Repara **MP4 / MOV** sin índice o cortados, **RSV de Sony**, **WAV** con la cabecera dañada, **MP3** y, en general, cualquier vídeo o audio que se pueda leer.
+
+---
+
+## Estabilizador
+
+Estabiliza clips de **drones, GoPro y cámaras de acción** con los datos del giroscopio que guarda la cámara, con **Gyroflow**.
+
+1. La primera vez, instala Gyroflow desde la propia app (se descarga de su web oficial y se comprueba).
+2. Arrastra los clips: la app mira si llevan datos del giroscopio.
+3. Elige el formato (ProRes 422 LT o H.265) y pulsa **Estabilizar**: se crea una copia (`nombre_estabilitzat`). El original no se toca.
 
 ---
 
@@ -226,7 +239,7 @@ En **Ajustes ⚙︎ › Permisos y complementos** se ve todo lo que necesita la 
 
 - **Permisos**: notificaciones, discos y carpetas, Mail… con un botón que abre directamente el apartado de Ajustes del Sistema.
 - **Complementos** que se descargan solos de sus webs oficiales (ffmpeg, yt-dlp, deno): instalar, reinstalar o borrar.
-- **Programas externos** que la app detecta (DaVinci Resolve, Blackmagic RAW Player, BRAW Toolbox).
+- **Programas externos** (DaVinci Resolve, Blackmagic RAW Player, BRAW Toolbox y Gyroflow): descargar, actualizar o eliminar desde aquí.
 - **Requisitos de cada herramienta** comparados con tu Mac. En el Inicio, cada herramienta tiene un punto verde, amarillo o rojo.
 
 | Herramienta | RAM mínima | Recomendada | Otros |
