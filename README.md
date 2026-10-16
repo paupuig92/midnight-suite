@@ -18,8 +18,18 @@ Midnight Suite reúne en una sola app todo lo que hace falta en un rodaje o en u
 
 Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original nunca se toca**.
 
+## Novedades de la versión 1.5
+
+- **DIT mucho más rápido**: verifica un archivo mientras copia el siguiente y lee por adelantado. Las tarjetas con muchos clips y las copias a discos externos son las que más lo notan.
+- **DIT aún más seguro**: si un archivo cambia de tamaño durante la copia, o hay enlaces o rutas que no se pueden leer, la tarjeta **no** se da por buena.
+- **Compresor y Conversor**: conservan todas las pistas de audio y el audio multicanal (FX6, 5.1).
+- **Upscaler**: los PNG mantienen la transparencia y los vídeos de móvil ya no se desincronizan.
+- **Subtítulos**: los proyectos de Final Cut con muchos compuestos ya no congelan la app.
+- En reposo la app casi no consume nada, y los errores salen siempre en castellano o catalán.
+
 ## Índice
 
+- [Novedades de la versión 1.5](#novedades-de-la-versión-15)
 - [Instalación](#instalación)
 - [DIT · copias de tarjetas](#dit--copias-de-tarjetas)
 - [Comparador](#comparador)
@@ -67,9 +77,10 @@ Hace copias de seguridad de las tarjetas de la cámara a **uno o varios discos a
 
 **Lo que hace por dentro**
 
-- La tarjeta se lee **una sola vez** y se escribe en todos los discos a la vez.
+- La tarjeta se lee **una sola vez** y se escribe en todos los discos a la vez. Mientras copia un archivo, ya verifica el anterior y lee el siguiente.
 - Cada archivo se verifica con **checksum xxHash64** (y **MD5** opcional). Opcionalmente genera un **ASC MHL**, el estándar de la industria.
 - Nunca sobrescribe nada: si un clip ya está igual, se salta; si hay uno distinto con el mismo nombre, avisa.
+- Si algo no se ha podido copiar o leer (un archivo que cambia de tamaño mientras se copia, un enlace simbólico, una ruta demasiado larga), lo dice y la tarjeta **no** se da por buena.
 - **Copia en cascada**: primero al disco rápido y, desde él, al resto, para liberar la tarjeta antes.
 - Ordena los clips en carpetas automáticamente según la cámara (`PAU`, `DRON`, `MULTI`…).
 - Avisa si un lector, un cable o un disco va mucho más lento que otros días (señal de que algo empieza a fallar).
@@ -106,7 +117,7 @@ Hace que los vídeos y las fotos **ocupen mucho menos sin que se note la diferen
 - Calidad: *Archivo* (visualmente idéntico), *Alta*, *Equilibrada*, *Ligera* o un bitrate a medida.
 - **Peso máximo**: escribe, por ejemplo, «25 MB» y la app calcula el bitrate para que cada vídeo quepa (ideal para webs). Si es muy pequeño, también baja la resolución.
 - **BRAW** sin necesidad de plugins de pago: usa el motor oficial de Blackmagic de **DaVinci Resolve** o **Blackmagic RAW Player** (gratuitos). Puede guardarlo en *Log* para etalonar o convertirlo a *Rec.709*.
-- Conserva timecode, metadatos y fechas del original.
+- Conserva timecode, metadatos y fechas del original, y **todas las pistas de audio** (también el audio multicanal de cámaras como la FX6 o un 5.1).
 
 **Imagen** (al estilo de compressor.io)
 
@@ -138,7 +149,7 @@ Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligen
 ![Upscaler de fotos con la comparación antes / después](docs/img/07-upscaler-fotos.jpg)
 
 - **Vídeo**: ×2, ×4, a medida o *mejorar a la misma resolución* (ideal para vídeos hechos con IA que se ven blandos en pantallas grandes). También puede pasar de 24 a 60 fps y añadir grano de película.
-- **Fotos**: ×2, ×4 o a medida, con comparación antes / después. Las fotos grandes se procesan por trozos.
+- **Fotos**: ×2, ×4 o a medida, con comparación antes / después. Las fotos grandes se procesan por trozos y los PNG **mantienen la transparencia**.
 - Antes de empezar, la app calcula **cuánto tardará** cada vídeo.
 
 ---
@@ -231,7 +242,8 @@ En **Ajustes ⚙︎ › Permisos y complementos** se ve todo lo que necesita la 
 
 ## Actualizaciones y seguridad
 
-- Las actualizaciones se descargan de este repositorio y van **firmadas digitalmente**: la app **no instala ninguna actualización que no esté firmada** por Midnight Group.
+- Las actualizaciones se descargan de este repositorio y van **firmadas digitalmente**: la app **no instala ninguna actualización que no esté firmada** por Midnight Group. La firma cubre también el número de versión, así que nadie puede hacer volver la app a una versión antigua.
+- La lista de modelos de los Subtítulos también va firmada: la app no descarga ningún modelo que no esté en la lista firmada.
 - La app está firmada siempre con el mismo certificado, así que macOS **recuerda los permisos** entre actualizaciones.
 - Las herramientas pesadas (Upscaler, Compresor, Reparador) trabajan en un **proceso aparte**: si algo falla, la app y las copias del DIT siguen funcionando.
 - Mientras el DIT copia, el resto de herramientas pasan a **segundo plano** para no frenar la copia.
@@ -247,7 +259,7 @@ No. Todo se procesa en tu Mac. Solo se conecta para buscar actualizaciones, desc
 No. Ninguna herramienta modifica el original: siempre se crea un archivo nuevo al lado (o en la carpeta que elijas).
 
 **El Mac dice que no puede verificar la app.**
-Ajustes del Sistema › Privacidad y seguridad › **Abrir igualmente**. Solo hace falta la primera vez.
+Es normal: la app es interna de Midnight y no pasa por la notarización de Apple (hace falta una cuenta de desarrollador de pago). Ajustes del Sistema › Privacidad y seguridad › **Abrir igualmente**. Solo hace falta la primera vez: las actualizaciones las instala la propia app y no vuelve a salir.
 
 **Algo ha fallado, ¿cómo pido ayuda?**
 Abre **Informes › Actividad**, elige lo que ha fallado y pulsa **Copiar el detalle**. También tienes **Ajustes ⚙︎ › Copiar el registro**.
