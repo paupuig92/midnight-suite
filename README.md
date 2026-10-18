@@ -18,6 +18,25 @@ Midnight Suite reúne en una sola app todo lo que hace falta en un rodaje o en u
 
 Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original nunca se toca**.
 
+## Novedades de la versión 2.0
+
+![Novedades: la historia de la app, build a build](docs/img/15-novedades.jpg)
+
+- **Diseño nuevo**, al estilo de las apps de Apple: barra lateral flotante con todas las herramientas, que se puede estrechar hasta quedarse solo con los iconos.
+- **Inicio nuevo**: saludo según la hora, tarjetas de cada herramienta y, cuando una está trabajando, su progreso en grande (en el DIT, también los discos de destino).
+- La barra lateral muestra el **progreso de cada herramienta** («68 %», «2/4») aunque estés en otra pantalla.
+- **Modo claro y oscuro**: sigue al Mac, o se fija con el botón del sol y la luna.
+- **Ajustes en su propia ventana** (⌘,): General, Apariencia, Avisos, Permisos, Complementos, Tu Mac y Actualizaciones.
+- **Nuevas páginas**: Guía de cada herramienta, Novedades de todas las versiones y Acerca de.
+- **Modo boost** (⚡): quita animaciones y cristal para ir más ligero; también respeta «Reducir movimiento» del Mac.
+- **DIT más seguro**: con dos discos o más, «Ya puedes borrarla» solo aparece cuando hay dos copias verificadas, y cada tarjeta se reconoce por su identificador (dos tarjetas con el mismo nombre ya no se confunden).
+- **Copias que no mienten**: si un disco da error al guardar, se desconecta o deja de responder, la copia sale como fallida; las copias cortadas se reanudan solas sin tocar nunca archivos que no haya hecho la app.
+- **ASC MHL según el estándar** y activado por defecto; el PDF incluye todos los destinos, la hora completa, las velocidades y todos los errores.
+- **Más rápido en Apple Silicon**: el Conversor y el Downloader usan el chip de vídeo del Mac, y las descargas bajan en 4 partes a la vez.
+- El **Estabilizador** (ProRes) y el **Upscaler** conservan el timecode, y el Conversor avisa si un vídeo de 10 bits pasará a 8 bits.
+- **Atajos** ⌘0–⌘9 para cada herramienta, botón ↻ para reintentar, el mismo aviso al terminar cualquier herramienta y una pantalla «Antes de empezar» la primera vez.
+- **Instalador nuevo** con el diseño 2.0 y la historia de la app desde la build 1 en Novedades.
+
 ## Novedades de la versión 1.6
 
 - **Nueva herramienta: Estabilizador.** Estabiliza clips con los datos del giroscopio de la cámara (Gyroflow). Gyroflow se instala desde la propia app.
@@ -25,11 +44,12 @@ Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original n
 - **Upscaler**: los vídeos con **transparencia** la mantienen (ProRes 4444 o HEVC con alfa), los verticales del móvil ya no salen del revés y se conservan todas las pistas de audio.
 - **DIT**: la copia rápida ya no aparece como verificada, dos tarjetas pueden copiarse a la vez al mismo disco y los informes muestran la hora del lugar donde se copió.
 - **Subtítulos**: los proyectos largos se preparan mucho más rápido (hasta **1 hora** de metraje) y ya no se cuela el audio oculto de clips sincronizados recortados.
-- **Programas externos**: descargar, actualizar y eliminar todos desde Ajustes.
+- **Programas externos**: descargar, actualizar y eliminar todos desde Ajustes › Complementos.
 - Muchas correcciones en el Reparador, el Compresor y el Downloader, y mejor rendimiento con miles de archivos.
 
 ## Índice
 
+- [Novedades de la versión 2.0](#novedades-de-la-versión-20)
 - [Novedades de la versión 1.6](#novedades-de-la-versión-16)
 - [Instalación](#instalación)
 - [DIT · copias de tarjetas](#dit--copias-de-tarjetas)
@@ -52,14 +72,16 @@ Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original n
 
 1. Descarga **[Midnight-Suite.dmg](https://github.com/paupuig92/midnight-suite/releases/latest/download/Midnight-Suite.dmg)**.
 2. Ábrelo y arrastra **Midnight Suite** a la carpeta **Aplicaciones**.
-3. La primera vez, si el Mac dice que no puede verificar la app: **Ajustes del Sistema › Privacidad y seguridad › Abrir igualmente**.
+3. La primera vez, el Mac avisa de que no puede verificar la app. **No pulses «Trasladar a la papelera»**: cierra el aviso y luego:
+   - **macOS 15 o posterior**: abre **Ajustes del Sistema › Privacidad y seguridad**, baja hasta el final y pulsa **Abrir igualmente** (te pedirá confirmarlo con tu contraseña o Touch ID).
+   - **macOS 14**: en Aplicaciones, **clic derecho** sobre Midnight Suite › **Abrir** › **Abrir**.
 4. Listo. A partir de aquí la app **se actualiza sola**: cuando hay una versión nueva aparece un aviso arriba y se instala con un clic.
 
 > La app está en **catalán y castellano**: se cambia con las banderas de arriba a la derecha.
 
-¿Primera vez? El botón **?** de arriba explica cada herramienta en 3 pasos sencillos (y, si quieres, los detalles técnicos).
+¿Primera vez? La **Guía** de la barra lateral (o el botón **?** abajo a la derecha de cada herramienta) explica cada herramienta en 3 pasos sencillos (y, si quieres, los detalles técnicos).
 
-![Cómo funciona cada herramienta](docs/img/11-como-funciona.jpg)
+![Guía con los pasos de cada herramienta](docs/img/11-guia.jpg)
 
 ---
 
@@ -67,15 +89,13 @@ Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original n
 
 Hace copias de seguridad de las tarjetas de la cámara a **uno o varios discos a la vez** y comprueba que cada copia sea idéntica al original.
 
-![DIT con una tarjeta y dos discos](docs/img/02-dit.jpg)
+![DIT: orígenes, transferencias y destinos](docs/img/02-dit.jpg)
 
 **Cómo se usa**
 
 1. Pon la tarjeta en el lector: aparece sola en la columna de la izquierda.
 2. Arrastra los discos (o la carpeta del día) a la columna de la derecha.
 3. Pulsa **Copiar y verificar** y espera el aviso verde **«YA PUEDES BORRARLA»**.
-
-![Copia terminada y verificada en dos discos](docs/img/03-dit-copia.jpg)
 
 **Lo que hace por dentro**
 
@@ -96,7 +116,7 @@ Hace copias de seguridad de las tarjetas de la cámara a **uno o varios discos a
 
 Mira si dos carpetas tienen **exactamente los mismos archivos**. Sirve para saber si una copia está completa.
 
-![Comparador con dos archivos que no coinciden](docs/img/04-comparador.jpg)
+![Comparador](docs/img/04-comparador.jpg)
 
 1. **A**: la carpeta original (por ejemplo, la tarjeta).
 2. **B**: la copia que quieres comprobar.
@@ -111,7 +131,7 @@ Mira si dos carpetas tienen **exactamente los mismos archivos**. Sirve para sabe
 
 Hace que los vídeos y las fotos **ocupen mucho menos sin que se note la diferencia**. Antes de empezar ya ves cuánto ocupará cada archivo y cuánto tardará.
 
-![Compresor de vídeo con la estimación de tamaño](docs/img/05-compresor.jpg)
+![Compresor](docs/img/05-compresor.jpg)
 
 **Vídeo**
 
@@ -133,7 +153,7 @@ Hace que los vídeos y las fotos **ocupen mucho menos sin que se note la diferen
 
 Cambia el **tipo de archivo**: de MKV a MP4, de MP3 a WAV, de vídeo a GIF, de HEIC a JPG…
 
-![Conversor con tres archivos](docs/img/06-conversor.jpg)
+![Conversor](docs/img/06-conversor.jpg)
 
 - **«Sin recodificar»** (en verde): el vídeo de dentro ya es compatible, así que solo se cambia el «envoltorio». Tarda segundos y **no pierde nada de calidad**.
 - **«Recodificando»** (en naranja): se convierte con la máxima calidad usando el chip del Mac.
@@ -148,7 +168,7 @@ Cambia el **tipo de archivo**: de MKV a MP4, de MP3 a WAV, de vídeo a GIF, de H
 
 Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligencia artificial de Apple** (macOS 26 o posterior).
 
-![Upscaler de fotos con la comparación antes / después](docs/img/07-upscaler-fotos.jpg)
+![Upscaler](docs/img/07-upscaler.jpg)
 
 - **Vídeo**: ×2, ×4, a medida o *mejorar a la misma resolución* (ideal para vídeos hechos con IA que se ven blandos en pantallas grandes). También puede pasar de 24 a 60 fps y añadir grano de película.
 - **Fotos**: ×2, ×4 o a medida, con comparación antes / después. Las fotos grandes se procesan por trozos y los PNG **mantienen la transparencia**.
@@ -161,7 +181,7 @@ Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligen
 
 Hace los **subtítulos automáticamente** y los pone en **Final Cut** como títulos que puedes editar. También saca **SRT** y **TXT** para Premiere, DaVinci, CapCut o YouTube.
 
-![Subtítulos con el editor y la vista previa](docs/img/13-subtitulos.jpg)
+![Subtítulos](docs/img/13-subtitulos.jpg)
 
 1. Arrastra el **proyecto** desde el navegador de Final Cut (o cualquier vídeo o audio), de **1 hora como máximo**. Si es más largo, haz los subtítulos por partes.
 2. Elige el idioma (**catalán, castellano o inglés**) y pulsa **Analizar el audio**.
@@ -184,7 +204,7 @@ Hace los **subtítulos automáticamente** y los pone en **Final Cut** como títu
 
 Intenta arreglar vídeos y audios que **no se abren**, por ejemplo cuando la cámara se apagó mientras grababa.
 
-![Reparador analizando un clip cortado](docs/img/08-reparador.jpg)
+![Reparador](docs/img/08-reparador.jpg)
 
 1. Arrastra el archivo: la app lo **analiza** y explica qué le pasa y si se puede salvar.
 2. Si puedes, añade un **clip bueno de la misma cámara** como referencia.
@@ -196,11 +216,13 @@ Repara **MP4 / MOV** sin índice o cortados, **RSV de Sony**, **WAV** con la cab
 
 ## Estabilizador
 
+![Estabilizador](docs/img/14-estabilizador.jpg)
+
 Estabiliza clips de **drones, GoPro y cámaras de acción** con los datos del giroscopio que guarda la cámara, con **Gyroflow**.
 
 1. La primera vez, instala Gyroflow desde la propia app (se descarga de su web oficial y se comprueba).
 2. Arrastra los clips: la app mira si llevan datos del giroscopio.
-3. Elige el formato (ProRes 422 LT o H.265) y pulsa **Estabilizar**: se crea una copia (`nombre_estabilitzat`). El original no se toca.
+3. Elige el formato (ProRes 422 LT o H.265) y pulsa **Empezar**: se crea una copia (`nombre_estabilizado`). El original no se toca.
 
 ---
 
@@ -222,7 +244,7 @@ Para Instagram o vídeos que piden iniciar sesión, elige el navegador en **Sesi
 
 Todo lo que se hace con la app **queda registrado**: qué, con qué archivos, cómo ha terminado y, si ha fallado, **por qué**.
 
-![Informes › Actividad con el detalle de un error](docs/img/09-actividad.jpg)
+![Informes de las copias del DIT](docs/img/09-informes.jpg)
 
 - **Copias del DIT**: el historial de todas las copias, con su informe PDF.
 - **Actividad**: todas las herramientas. Se puede filtrar por herramienta o ver **solo los errores**, buscar por nombre de archivo y exportar a PDF.
@@ -233,14 +255,12 @@ Todo lo que se hace con la app **queda registrado**: qué, con qué archivos, c�
 
 ## Permisos, complementos y requisitos
 
-En **Ajustes ⚙︎ › Permisos y complementos** se ve todo lo que necesita la app y lo que falta.
-
-![Permisos y complementos](docs/img/12-permisos.jpg)
+En **Ajustes** (⚙︎ o ⌘,), las pestañas **Permisos**, **Complementos** y **Tu Mac** muestran todo lo que necesita la app y lo que falta.
 
 - **Permisos**: notificaciones, discos y carpetas, Mail… con un botón que abre directamente el apartado de Ajustes del Sistema.
 - **Complementos** que se descargan solos de sus webs oficiales (ffmpeg, yt-dlp, deno): instalar, reinstalar o borrar.
 - **Programas externos** (DaVinci Resolve, Blackmagic RAW Player, BRAW Toolbox y Gyroflow): descargar, actualizar o eliminar desde aquí.
-- **Requisitos de cada herramienta** comparados con tu Mac. En el Inicio, cada herramienta tiene un punto verde, amarillo o rojo.
+- **Tu Mac**: los requisitos de cada herramienta comparados con tu Mac. Si a una herramienta le falta algo, en la barra lateral sale un punto amarillo o rojo a su lado.
 
 | Herramienta | RAM mínima | Recomendada | Otros |
 |---|---|---|---|
@@ -249,7 +269,7 @@ En **Ajustes ⚙︎ › Permisos y complementos** se ve todo lo que necesita la 
 | Upscaler | 8 GB | 16 GB | macOS 26 · chip M3 o Pro/Max/Ultra recomendado |
 | Subtítulos | 8 GB | 16 GB | ffmpeg · modelo de Whisper (se descarga solo) |
 
-**Modo boost 🚀**: el botón del cohete quita las animaciones y el efecto cristal para que la app vaya más ligera (portátiles con batería o que se calientan).
+**Modo boost ⚡**: el botón del rayo quita las animaciones y el efecto cristal para que la app vaya más ligera (portátiles con batería o que se calientan).
 
 ---
 
@@ -260,6 +280,8 @@ En **Ajustes ⚙︎ › Permisos y complementos** se ve todo lo que necesita la 
 - La app está firmada siempre con el mismo certificado, así que macOS **recuerda los permisos** entre actualizaciones.
 - Las herramientas pesadas (Upscaler, Compresor, Reparador) trabajan en un **proceso aparte**: si algo falla, la app y las copias del DIT siguen funcionando.
 - Mientras el DIT copia, el resto de herramientas pasan a **segundo plano** para no frenar la copia.
+
+**¿Por qué fiarse?** Midnight Suite solo instala actualizaciones que llevan una firma criptográfica (Ed25519) hecha con una clave que solo tiene Puig: ni GitHub ni nadie con acceso al repositorio puede hacer que la app se actualice con una versión que él no haya firmado. La firma cubre el archivo entero, el número de versión (no se puede volver atrás) y el texto del aviso. La app comprueba el archivo antes de tocar nada, se sustituye de una vez y, si algo falla, deja la versión anterior tal como estaba. Los complementos (ffmpeg, yt-dlp, deno, Gyroflow y los modelos de Whisper) se descargan solo por HTTPS de sus fuentes oficiales y se comprueban: ffmpeg, yt-dlp y deno con su checksum SHA-256, los modelos con el SHA-256 de una lista firmada y Gyroflow con la firma de código de su propio equipo. Lo que todavía no tiene es la notarización de Apple; por eso macOS avisa la primera vez: instálala solo desde el enlace de esta página o el que te pase Puig.
 
 ---
 
@@ -272,10 +294,10 @@ No. Todo se procesa en tu Mac. Solo se conecta para buscar actualizaciones, desc
 No. Ninguna herramienta modifica el original: siempre se crea un archivo nuevo al lado (o en la carpeta que elijas).
 
 **El Mac dice que no puede verificar la app.**
-Es normal: la app es interna de Midnight y no pasa por la notarización de Apple (hace falta una cuenta de desarrollador de pago). Ajustes del Sistema › Privacidad y seguridad › **Abrir igualmente**. Solo hace falta la primera vez: las actualizaciones las instala la propia app y no vuelve a salir.
+Es normal: la app es interna de Midnight y no pasa por la notarización de Apple (hace falta una cuenta de desarrollador de pago). En macOS 15 o posterior: Ajustes del Sistema › Privacidad y seguridad, baja hasta el final y pulsa **Abrir igualmente**. En macOS 14: clic derecho sobre la app › **Abrir**. No pulses «Trasladar a la papelera». Solo hace falta la primera vez: las actualizaciones las instala la propia app y no vuelve a salir.
 
 **Algo ha fallado, ¿cómo pido ayuda?**
-Abre **Informes › Actividad**, elige lo que ha fallado y pulsa **Copiar el detalle**. También tienes **Ajustes ⚙︎ › Copiar el registro**.
+Abre **Informes › Actividad**, elige lo que ha fallado y pulsa **Copiar el detalle**. También tienes **Copiar el registro (para soporte)** en **Ajustes › Actualizaciones** y en **Acerca de**.
 
 ---
 
