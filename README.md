@@ -459,6 +459,12 @@ Abre **Historial › Actividad**, elige lo que ha fallado y pulsa **Copiar el de
 
 Dentro de la app tienes la historia completa, versión a versión: menú **Midnight Suite › Novedades**.
 
+### Versión 2.1.4
+
+- **Upscaler**: cada clip de la cola muestra en etiquetas rojas con qué ajustes se hace (Mejora, ×2 o ×4, Máxima o Rápida, grano y códec). Los que ya están en marcha o hechos se quedan con los suyos aunque cambies el panel.
+- **Barra lateral**: la firma de Puig sustituye a «SUITE by Puig» y se escribe sola al pasar el ratón; el logo MIDNIGHT hace una pequeña animación de luz.
+- **Avisos**: ya no salen con el icono viejo «DIT».
+
 ### Versión 2.1.3
 
 - **Upscaler más rápido**: con IA y más fotogramas por segundo (por ejemplo «Mejora» a 60 fps), la IA se hace solo en los fotogramas reales y después se inventan los intermedios. Entre 2 y 3,5 veces más rápido, el grano ya no queda difuminado y el tiempo estimado es más exacto.
