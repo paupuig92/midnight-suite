@@ -459,6 +459,12 @@ Abre **Historial › Actividad**, elige lo que ha fallado y pulsa **Copiar el de
 
 Dentro de la app tienes la historia completa, versión a versión: menú **Midnight Suite › Novedades**.
 
+### Versión 2.1.3
+
+- **Upscaler más rápido**: con IA y más fotogramas por segundo (por ejemplo «Mejora» a 60 fps), la IA se hace solo en los fotogramas reales y después se inventan los intermedios. Entre 2 y 3,5 veces más rápido, el grano ya no queda difuminado y el tiempo estimado es más exacto.
+- **Upscaler**: con el boost encendido antes de empezar, los vídeos ya no se quedan «En espera» para siempre.
+- **DIT**: opción «Personalizado…» en el menú de la carpeta para escribir su nombre.
+
 ### Versión 2.1.2
 
 - **DIT a un NAS (SMB)**: la app ya no bloquea los archivos que copia (el bloqueo podía quedarse en el servidor y nadie podía abrir los clips) y, al terminar cada clip, comprueba que el NAS lo deja leer, también en «Rápida».
