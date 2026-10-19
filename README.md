@@ -110,7 +110,7 @@ Esto solo pasa **la primera vez**. Las actualizaciones las instala la propia app
 
 1. **Avisos**: pulsa **Activar los avisos**. Así la app te avisa cuando termina una copia o una herramienta, aunque estés en otra app.
 2. **Permiso para las tarjetas**: la primera vez que copies una tarjeta, macOS te preguntará si Midnight Suite puede acceder a los volúmenes extraíbles. Pulsa **Permitir**. Si no, el DIT no podrá leerla.
-3. **Complementos**: algunas herramientas necesitan programas extra. Pulsa **Prepáralo todo para el rodaje** y la app los descarga sola, de sus webs oficiales y comprobados. Puedes seguir trabajando mientras tanto.
+3. **Complementos**: algunas herramientas necesitan programas extra. Pulsa **Instalar lo que falta** y la app los descarga sola, de sus webs oficiales y comprobados. Puedes seguir trabajando mientras tanto.
 
 Cuando acabes, pulsa **Empezar**.
 
@@ -207,7 +207,8 @@ Hace copias de seguridad de las tarjetas de la cámara en **uno o varios discos 
 - Con dos discos o más, «Ya puedes borrarla» solo sale cuando hay **dos copias verificadas**. Dos copias en el mismo disco cuentan como una.
 - Nunca sobrescribe nada: si un clip ya está igual, se lo salta; si hay uno distinto con el mismo nombre, avisa.
 - Si algo no se ha podido copiar o leer, lo dice y la tarjeta **no** se da por buena.
-- Botones **Rápida** (copia sin volver a leer), **Verificar** y **Expulsar**.
+- Botones **Rápida** (copia sin volver a leer), **Verificar** y **Expulsar**. Después de una Rápida, **Verificar** compara las copias con el checksum guardado al copiar, sin volver a leer la tarjeta.
+- Copiar a un **NAS** por red (SMB) también es seguro: al terminar cada clip, la app comprueba que el NAS lo deja leer.
 - **Copia en cascada**: primero al disco rápido y, desde él, al resto, para liberar la tarjeta antes.
 - Carpetas automáticas por día, cámara y rollo; **nota** por tarjeta y **sesión de rodaje** («FIB 2026 · Día 3»).
 - Avisa si un lector, un cable o un disco va mucho más lento que otros días.
@@ -315,7 +316,8 @@ Estabiliza clips de **drones, GoPro y cámaras de acción** con los datos del gi
 
 1. Arrastra clips o carpetas. La app mira cuáles llevan datos del giroscopio.
 2. Elige el códec, el tamaño y la suavidad.
-3. Pulsa **Empezar**. Se hacen uno tras otro y ves cuánto falta.
+3. Pulsa **Estabilizar**. Se hacen de dos en dos (casi el doble de rápido) y ves cuánto falta. Si mientras tanto necesitas el Mac para otras cosas, desmarca «Dos clips a la vez».
+   Si solo quieres algunos, desmarca la casilla de los demás: el botón dice cuántos se harán, por ejemplo «Estabilizar (3)».
 
 > La primera vez hay que instalar Gyroflow: un botón dentro de la app, unos 90 MB.
 
@@ -457,6 +459,16 @@ Abre **Historial › Actividad**, elige lo que ha fallado y pulsa **Copiar el de
 
 Dentro de la app tienes la historia completa, versión a versión: menú **Midnight Suite › Novedades**.
 
+### Versión 2.1.2
+
+- **DIT a un NAS (SMB)**: la app ya no bloquea los archivos que copia (el bloqueo podía quedarse en el servidor y nadie podía abrir los clips) y, al terminar cada clip, comprueba que el NAS lo deja leer, también en «Rápida».
+- **Verificar más rápido**: después de una «Rápida» ya no vuelve a leer la tarjeta; compara las copias con el checksum guardado al copiar. En Ajustes se puede pedir que la relea.
+- **Mensajes más claros**: «no se puede leer» en lugar de «checksum diferente» cuando un archivo no se puede leer, y «Copiar y verificar» lo detecta enseguida.
+- **DaVinci Resolve, Blackmagic RAW Player y BRAW Toolbox** se detectan también instalados desde la web, y también Resolve Studio.
+- **Estabilizador**: hace 2 clips a la vez (casi el doble de rápido; se puede desactivar), casilla en cada clip para elegir cuáles se hacen, y los clips de un NAS se leen de tres en tres.
+- **DIT**: una ✕ en cada copia terminada para quitarla de la lista; las imágenes de disco (.dmg) ya no se abren como tarjetas.
+- «Instalar lo que falta» y «Preajustes» (antes «Prepáralo todo para el rodaje» y «Recetas»).
+
 ### Versión 2.1.1
 
 - **DIT**: si la columna es estrecha, «Rápida», «Verificar» y «Expulsar» se quedan solo con el icono (el texto sale al pasar el ratón), en lugar de partirse letra a letra.
@@ -473,7 +485,7 @@ Dentro de la app tienes la historia completa, versión a versión: menú **Midni
 - **Compresor**: LUT .cube para material log y BRAW en la GPU (más de 2× más rápido). **Conversor**: normalizar el volumen, recortar y copia de revisión.
 - **Upscaler y Estabilizador**: prueba de 5 segundos «Antes / Después»; el Estabilizador guarda también el proyecto de Gyroflow.
 - **Subtítulos**: buscar y reemplazar, importar SRT y traducción al inglés. **Reparador**: carpetas enteras. **Downloader**: solo un trozo.
-- **Historial** con «¿Dónde está este clip?», «Enviar a…» en cada archivo terminado, recetas guardadas por herramienta y archivos soltados en el icono del Dock.
+- **Historial** con «¿Dónde está este clip?», «Enviar a…» en cada archivo terminado, preajustes guardados por herramienta y archivos soltados en el icono del Dock.
 - Interfaz más coherente, barra lateral más corta y más de 15 errores arreglados.
 
 <details>
