@@ -401,7 +401,7 @@ En **Ajustes** (⌘,) tienes tres pestañas que te dicen qué necesita la app y 
 
 Esto es lo que pide cada herramienta:
 
-| Herramienta | Memoria (RAM) mínima | Recomendada | Además necesita |
+| Herramienta | Memoria (RAM) mínima | Para usar varias a la vez | Además necesita |
 |---|---|---|---|
 | DIT · Comparador | 4 GB | 8 GB | — |
 | Conversor | 4 GB | 8 GB | ffmpeg (complemento) |
@@ -411,6 +411,10 @@ Esto es lo que pide cada herramienta:
 | Estabilizador | 8 GB | 16 GB | Gyroflow (un botón, unos 90 MB) · 50 GB libres recomendados |
 | Upscaler | 8 GB | 16 GB | **macOS 26** · chip M3 o un Pro/Max/Ultra recomendado · 50 GB libres recomendados |
 | Subtítulos | 8 GB | 16 GB | ffmpeg · modelo de Whisper (se descarga la primera vez) · 3 GB libres para los modelos |
+
+Con **8 GB** funcionan todas las herramientas, una pesada cada vez. Con **16 GB o más** pueden trabajar varias a la vez.
+
+**Memoria con semáforo**: el indicador de memoria, arriba, sigue lo que dice macOS. 🟢 Verde: las herramientas trabajan con normalidad. 🟡 Amarillo: el Mac va justo y trabaja una sola herramienta cada vez (el DIT también cuenta); puede ir más lenta. 🔴 Rojo: no empieza ninguna y la que trabaja avisa de que el Mac se ha quedado sin memoria (cierra otras apps).
 
 ¿Cuánta memoria tiene tu Mac? Menú Apple (la manzana) › **Acerca de este Mac** › línea **Memoria**.
 
@@ -458,6 +462,14 @@ Abre **Historial › Actividad**, elige lo que ha fallado y pulsa **Copiar el de
 ## Novedades
 
 Dentro de la app tienes la historia completa, versión a versión: menú **Midnight Suite › Novedades**.
+
+### Versión 2.2
+
+- **Mac de 8 GB**: las herramientas (Subtítulos, Compresor, Upscaler, Estabilizador, Reparador) ya no se quedan esperando memoria para siempre.
+- **Memoria con semáforo**: en verde pueden trabajar varias herramientas a la vez; en amarillo, una sola (el DIT también cuenta); en rojo no empieza ninguna, y la que trabaja avisa de que el Mac se ha quedado sin memoria.
+- La app **aprende cuánta memoria gasta de verdad** cada trabajo y pide justo esa.
+- **Panel de memoria más claro**, y la RAM sale en verde en los Mac de 8 GB (una herramienta pesada cada vez).
+- Después de actualizar, **las copias viejas de la app van a la Papelera**.
 
 ### Versión 2.1.4
 
