@@ -18,6 +18,22 @@ Midnight Suite reúne en una sola app todo lo que hace falta en un rodaje o en u
 
 Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original nunca se toca**.
 
+## Novedades de la versión 2.1
+
+- **DIT que comprueba cada clip**: antes de decir «Ya puedes borrarla» se comprueba que cada clip se abre de verdad, y el PDF lleva una miniatura de cada clip.
+- **DIT más claro**: dos copias en el mismo disco ya no cuentan como dos; un disco que no se puede leer sale como «ilegible» y no como «diferente»; parar la copia pide confirmación; «Se copia en:» muestra la ruta real y el progreso sale en el icono del Dock.
+- **Para el rodaje**: nota por tarjeta, carpetas automáticas por día, cámara y rollo, sesión de rodaje («FIB 2026 · Día 3»), proxies al terminar e informe guardado en el disco de destino.
+- **¿Listo para el festival?**: una comprobación de un clic antes de salir.
+- **Avisos**: adiós a Telegram; el correo lleva el nombre del Mac, avisa si falla y también llega al terminar una herramienta larga. Notificaciones con «Abrir el informe» y «Mostrar en el Finder», una por tarjeta.
+- **Actualizaciones más seguras**: si una versión nueva no arranca, la app vuelve sola a la anterior; ffmpeg, yt-dlp y Gyroflow se comprueban cada vez.
+- **Compresor**: BRAW en la GPU (más de 2× más rápido) con Extended Video, Highlight Recovery y espacio de color, y LUT .cube para material log.
+- **Conversor**: normalizar el volumen (redes o TV), recortar inicio y final y copia de revisión con timecode y marca.
+- **Upscaler y Estabilizador**: prueba de 5 segundos «Antes / Después» antes de hacerlo todo; el Estabilizador guarda también el proyecto de Gyroflow.
+- **Subtítulos**: nombres del proyecto, buscar y reemplazar, importar SRT y traducción al inglés. **Reparador**: carpetas enteras. **Downloader**: solo un trozo.
+- **Historial** con «¿Dónde está este clip?», «Enviar a…» en cada archivo terminado, recetas guardadas por herramienta y archivos soltados en el icono del Dock.
+- **Interfaz más coherente**: mismos botones e iconos en todas las herramientas, carpeta de salida siempre visible, barra lateral más corta y animaciones nuevas.
+- Más de 15 errores arreglados y la app va más fluida.
+
 ## Novedades de la versión 2.0
 
 ![Novedades: la historia de la app, build a build](docs/img/15-novedades.jpg)
@@ -37,20 +53,10 @@ Todo se hace **en tu Mac**: no se sube nada a internet y **el archivo original n
 - **Atajos** ⌘0–⌘9 para cada herramienta, botón ↻ para reintentar, el mismo aviso al terminar cualquier herramienta y una pantalla «Antes de empezar» la primera vez.
 - **Instalador nuevo** con el diseño 2.0 y la historia de la app desde la build 1 en Novedades.
 
-## Novedades de la versión 1.6
-
-- **Nueva herramienta: Estabilizador.** Estabiliza clips con los datos del giroscopio de la cámara (Gyroflow). Gyroflow se instala desde la propia app.
-- **Conversor**: exporta a **DXV** para Resolume (calidad normal, sin alfa).
-- **Upscaler**: los vídeos con **transparencia** la mantienen (ProRes 4444 o HEVC con alfa), los verticales del móvil ya no salen del revés y se conservan todas las pistas de audio.
-- **DIT**: la copia rápida ya no aparece como verificada, dos tarjetas pueden copiarse a la vez al mismo disco y los informes muestran la hora del lugar donde se copió.
-- **Subtítulos**: los proyectos largos se preparan mucho más rápido (hasta **1 hora** de metraje) y ya no se cuela el audio oculto de clips sincronizados recortados.
-- **Programas externos**: descargar, actualizar y eliminar todos desde Ajustes › Complementos.
-- Muchas correcciones en el Reparador, el Compresor y el Downloader, y mejor rendimiento con miles de archivos.
-
 ## Índice
 
+- [Novedades de la versión 2.1](#novedades-de-la-versión-21)
 - [Novedades de la versión 2.0](#novedades-de-la-versión-20)
-- [Novedades de la versión 1.6](#novedades-de-la-versión-16)
 - [Instalación](#instalación)
 - [DIT · copias de tarjetas](#dit--copias-de-tarjetas)
 - [Comparador](#comparador)
