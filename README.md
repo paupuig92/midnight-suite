@@ -41,6 +41,9 @@ Tres cosas que se cumplen siempre:
 | 🩹 | **[Reparador](#reparador)** | Arreglar vídeos y audios que no se abren. |
 | 💬 | **[Subtítulos](#subtítulos)** | Subtítulos automáticos para Final Cut (y SRT para el resto de programas). |
 | ⬇️ | **[Downloader](#downloader)** | Descargar vídeo o música de YouTube, Instagram, TikTok y más. |
+| 🎙️ | **[Audio](#audio)** | Quitar el ruido de una voz, dejarla como de estudio o separar la voz de la música. |
+| ✂️ | **[Separar clips](#separar-clips)** | Cortar el máster de Final Cut en un archivo por clip, con su nombre y su timecode. |
+| ℹ️ | **[Info de clips](#info-de-clips)** | Ver todo lo que lleva un clip (cámara, ISO, timecode…) y encontrar los que fallan antes de editar. |
 | 📋 | **[Historial](#historial)** | Todo lo que ha hecho la app, con informes en PDF. |
 
 La app está en **castellano y catalán**.
@@ -125,7 +128,7 @@ Abre **Ajustes** (el botón del engranaje ⚙︎ arriba a la derecha, o **⌘,**
 - **Guía**: cada herramienta explicada en 3 pasos. Ábrela con el botón **?** de abajo a la derecha de cada herramienta, o en el menú **Ayuda › Guía de Midnight Suite** (**⌘?**).
 - **Acerca de** y **Novedades**: en el menú **Midnight Suite** (arriba, al lado de la manzana).
 
-![Guía con los pasos de cada herramienta](docs/img/11-guia.jpg)
+![Guía con los pasos de cada herramienta](docs/img/15-guia.jpg)
 
 ### Actualizaciones
 
@@ -182,9 +185,9 @@ La versión de la App Store no sirve. Instala Gyroflow desde el propio Estabiliz
 
 ## Las herramientas
 
-En la barra lateral están ordenadas en grupos: **Rodaje** (DIT y Comparador), **Vídeo y foto** (Compresor, Conversor, Upscaler, Estabilizador, Reparador y Subtítulos), **Internet** (Downloader) e **Historial**.
+En la barra lateral están ordenadas en grupos: **Rodaje** (DIT, Comparador e Info de clips), **Vídeo y foto** (Compresor, Conversor, Upscaler, Estabilizador, Reparador, Subtítulos, Audio y Separar clips), **Internet** (Downloader) e **Historial**.
 
-Cada una tiene un atajo: **⌘1** a **⌘9** en ese orden, **⌘0** para el Inicio y **⌘⇧R** para el Historial.
+Cada una tiene un atajo: **⌘1** a **⌘9** en ese orden (de DIT a Subtítulos), **⌥⌘1** Audio, **⌥⌘2** Separar clips, **⌥⌘3** Downloader, **⌘0** para el Inicio y **⌘⇧R** para el Historial.
 
 ### DIT · copias de tarjetas
 
@@ -221,7 +224,7 @@ Hace copias de seguridad de las tarjetas de la cámara en **uno o varios discos 
 
 Mira si dos carpetas tienen **exactamente los mismos archivos**. Sirve para saber si una copia está completa.
 
-![Comparador](docs/img/04-comparador.jpg)
+![Comparador](docs/img/03-comparador.jpg)
 
 1. **A**: la carpeta original (por ejemplo, la tarjeta).
 2. **B**: la copia que quieres comprobar.
@@ -312,7 +315,7 @@ Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligen
 
 Estabiliza clips de **drones, GoPro y cámaras de acción** con los datos del giroscopio que guarda la cámara. Lo hace con **Gyroflow**.
 
-![Estabilizador](docs/img/14-estabilizador.jpg)
+![Estabilizador](docs/img/08-estabilizador.jpg)
 
 1. Arrastra clips o carpetas. La app mira cuáles llevan datos del giroscopio.
 2. Elige el códec, el tamaño y la suavidad.
@@ -334,7 +337,7 @@ Estabiliza clips de **drones, GoPro y cámaras de acción** con los datos del gi
 
 Intenta arreglar vídeos y audios que **no se abren**, por ejemplo cuando la cámara se apagó mientras grababa.
 
-![Reparador](docs/img/08-reparador.jpg)
+![Reparador](docs/img/09-reparador.jpg)
 
 1. Arrastra el archivo que no se abre (o una carpeta entera). La app te explica qué le pasa y si se puede salvar.
 2. Si puedes, añade un **clip bueno de la misma cámara** como referencia.
@@ -350,7 +353,7 @@ Intenta arreglar vídeos y audios que **no se abren**, por ejemplo cuando la cá
 
 Hace los **subtítulos automáticamente** y los pone en **Final Cut** como títulos que puedes editar. También saca **SRT** y **TXT** para Premiere, DaVinci, CapCut o YouTube.
 
-![Subtítulos](docs/img/13-subtitulos.jpg)
+![Subtítulos](docs/img/10-subtitulos.jpg)
 
 1. Arrastra el **proyecto** desde el navegador de Final Cut (o cualquier vídeo o audio).
 2. Elige el idioma (**catalán, castellano o inglés**) y pulsa **Analizar el audio**. Corrige lo que haga falta a la derecha.
@@ -370,7 +373,7 @@ Hace los **subtítulos automáticamente** y los pone en **Final Cut** como títu
 
 Descarga vídeo o música de **YouTube, Instagram, TikTok, SoundCloud, Spotify, Vimeo** y más de 1.800 webs.
 
-![Downloader](docs/img/10-downloader.jpg)
+![Downloader](docs/img/13-downloader.jpg)
 
 1. Copia el enlace del vídeo y pégalo en la caja.
 2. Elige si quieres el **vídeo** o **solo el audio** (entero o solo un trozo).
@@ -378,11 +381,69 @@ Descarga vídeo o música de **YouTube, Instagram, TikTok, SoundCloud, Spotify, 
 
 > Para Instagram (y algunos vídeos que piden iniciar sesión), elige tu navegador en **Sesión del navegador** y pulsa **Probar la sesión**. Tienes que haber entrado en tu cuenta con ese navegador.
 
+### Audio
+
+**Limpia la voz** de entrevistas y vídeos, la deja **como de estudio** o **separa la voz de la música**. Todo en tu Mac, sin internet.
+
+![Audio](docs/img/11-audio.jpg)
+
+1. Arrastra los audios o vídeos (WAV, MP3, MP4, MOV…).
+2. Elige qué quieres: **Limpieza de voz**, **Voz de estudio** o **Voz y música**.
+3. Pulsa **Limpiar la voz**, **Mejorar** o **Separar**. Con 🎧 puedes escuchar 5 s de prueba (antes y después) sin hacer el archivo entero.
+
+<details>
+<summary><b>Más detalles</b></summary>
+
+- **Limpieza de voz** usa DeepFilterNet 3 (libre): quita el ruido de fondo y deja la voz. «Cantidad de limpieza» dice cuánto ruido puede quitar.
+- **Voz de estudio**: después de la limpieza, filtro de graves, EQ de voz, de-esser, compresor y volumen final en LUFS (Podcast −16, Broadcast −23, Redes −14 o sin cambio). Mejora una voz ya limpia; no reconstruye una voz de teléfono.
+- **Voz y música** usa Demucs v4 (libre) en la GPU del Mac: salen «_voz» e «_instrumental», o cinco pistas con batería, bajo y el resto. El modelo (79 MB) se descarga la primera vez.
+- Sale un WAV de 24 bits con la misma frecuencia y duración que el original, alineado con el vídeo. El original nunca se toca.
+</details>
+
+### Separar clips
+
+Corta el **máster de Final Cut** en **un archivo por clip**, con el nombre y el timecode de la cámara. Útil para entregar los planos montados por separado.
+
+![Separar clips](docs/img/12-separar-clips.jpg)
+
+1. En Final Cut, exporta el proyecto en **ProRes** (Archivo › Compartir) y el **XML** (Archivo › Exportar XML…).
+2. Arrastra el XML y el máster a la ventana (o el proyecto directamente desde el navegador de Final Cut).
+3. Pulsa **Separar**. Por defecto, los clips salen en una carpeta «Clips separados» junto al máster.
+
+<details>
+<summary><b>Más detalles</b></summary>
+
+- Un archivo por cada clip de la línea principal, exacto al fotograma. Los huecos se saltan; con una transición, se corta en medio.
+- **Original (sin recomprimir)**: el trozo del máster tal cual, en segundos y sin perder calidad.
+- El audio es la mezcla del proyecto (música, voz en off), no el sonido original de la cámara.
+- Puede guardar también la lista de clips en **CSV**. Nunca sobrescribe nada.
+</details>
+
+### Info de clips
+
+Lee la **información de cada clip** (cámara, ISO, obturación, gamma, timecode, audio…) y **avisa de lo que falla** antes de empezar a editar.
+
+![Info de clips](docs/img/04-info-de-clips.jpg)
+
+1. Arrastra los clips o la carpeta de la tarjeta (MP4, MOV, MXF, BRAW, WAV, MP3).
+2. Mira la **tabla**: un clip por fila; en amarillo, lo que no coincide con el resto (resolución, fps, códec, gamma o audio).
+3. Pulsa un clip para ver el detalle, o **Analizar entero** para descodificarlo todo. Con **Exportar** sacas un JSON, un CSV o un PDF.
+
+<details>
+<summary><b>Más detalles</b></summary>
+
+- Los datos salen de MediaInfo (libre), dentro de la app. El archivo solo se lee: nunca se escribe nada en él.
+- Cámaras: Sony (ISO, obturación, diafragma, S-Log3…), Blackmagic (cámara, óptica, rollo), DJI (ISO, obturación, balance de blancos, D-Log y GPS) e iPhone (modelo y GPS).
+- Alertas: fps variable, cámara lenta o rápida, clips sin timecode, audio desfasado y el clip distinto del resto.
+- **Analizar entero** avisa de archivos incompletos, saltos de tiempo, imagen congelada, negros, sobreexposición y, en el audio, silencio, saturación, canales idénticos y fase invertida. Nunca se hace mientras el DIT copia.
+- El CSV sigue las columnas y el orden de la tabla. El GPS solo sale si activas «Incluir el GPS al exportar».
+</details>
+
 ### Historial
 
 Todo lo que hace la app **queda apuntado**: qué, con qué archivos, cómo ha terminado y, si ha fallado, **por qué**.
 
-![Historial de las copias del DIT](docs/img/09-informes.jpg)
+![Historial de las copias del DIT](docs/img/14-historial.jpg)
 
 - **Copias del DIT**: todas las copias, con su informe PDF.
 - **Actividad**: todas las herramientas. Puedes filtrar por herramienta o por estado, buscar un archivo o un error, y exportar a PDF.
@@ -515,7 +576,7 @@ Dentro de la app tienes la historia completa, versión a versión: menú **Midni
 <details>
 <summary><b>Versión 2.0</b></summary>
 
-![Novedades: la historia de la app, build a build](docs/img/15-novedades.jpg)
+![Novedades: la historia de la app, build a build](docs/img/16-novedades.jpg)
 
 - **Diseño nuevo**, al estilo de las apps de Apple, con barra lateral flotante.
 - **Inicio nuevo**, con el progreso de cada herramienta en grande.
