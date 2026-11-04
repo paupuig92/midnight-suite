@@ -139,6 +139,8 @@ No hace falta volver a esta página. Cuando hay una versión nueva:
 
 También puedes buscarla tú: menú **Midnight Suite › Buscar actualizaciones…**, o **Ajustes › Actualizaciones**.
 
+Las actualizaciones se descargan en segundo plano y se pueden instalar al salir de la app. En la **barra de menús** y en el **Dock** ves cómo va el trabajo («DIT 64 % · 12 min») sin abrir la ventana.
+
 > Si hay una copia del DIT o una herramienta trabajando, la app espera a que termine antes de actualizarse. Así no se corta nada.
 
 ### Si algo no va bien
@@ -218,6 +220,12 @@ Hace copias de seguridad de las tarjetas de la cámara en **uno o varios discos 
 - Cada copia genera un **informe PDF** con la lista de archivos, sus checksums y una miniatura de cada clip.
 - En **Ajustes › General** puedes pedir también proxies, guardar el informe en el disco de destino o expulsar la tarjeta sola cuando ya es segura.
 - **¿Listo para el festival?**: una comprobación de un clic antes de salir.
+- **Tarjeta que vuelve a entrar**: si ya la habías volcado, solo copia los clips nuevos y sigue en el mismo rollo.
+- **Comprobación de clips**: también revisa los **BRAW** y los **WAV** (si la cámara o la grabadora no los cerró), con un botón **«Reparar estos»** que los envía al Reparador.
+- **Cierre de noche**: antes de recoger te dice qué tarjetas tienen menos de 2 copias, qué falta verificar y qué queda pendiente en el NAS.
+- Avisa si el portátil va con **batería**, en modo de ahorro o con la **tapa cerrada**, y si sacas un disco a media copia («el disco se ha desconectado · NO formatees la tarjeta»).
+- Al acabar, crea un **evento de Final Cut** y un **CSV para DaVinci Resolve** con los clips ordenados por cámara, rollo y día.
+- Un clip dañado (por ejemplo un BRAW cortado) **nunca cierra la app**: las demás copias siguen.
 </details>
 
 ### Comparador
@@ -230,12 +238,15 @@ Mira si dos carpetas tienen **exactamente los mismos archivos**. Sirve para sabe
 2. **B**: la copia que quieres comprobar.
 3. Pulsa **Comparar**. En rojo, lo que falta o está mal; en naranja, lo que tiene un tamaño distinto; en verde, lo que está bien.
 
+> El ✅ verde solo sale si marcas **Verificar el contenido (checksum)**. Sin él, la app solo puede decir que están los mismos nombres y tamaños, y lo marca en naranja.
+
 <details>
 <summary><b>Más detalles</b></summary>
 
 - **Solo por nombre**: ignora las subcarpetas. Útil si en la copia los clips están en otras carpetas (`PAU`, `DRON`…).
 - **Verificar el contenido (checksum)**: lee los dos lados enteros. Es más lento, pero detecta archivos corruptos aunque tengan el mismo tamaño.
 - **Disco contra su ascmhl**: compara un disco copiado con el DIT con su lista de checksums, aunque la tarjeta ya no esté.
+- Las carpetas `ascmhl` e «Informes Midnight» que deja el DIT no salen como archivos de más.
 </details>
 
 ### Compresor
@@ -258,6 +269,7 @@ Hace que los vídeos y las fotos **ocupen mucho menos sin que se note**. Antes d
 - **Peso máximo**: escribe, por ejemplo, «25 MB» y la app calcula el bitrate para que cada vídeo quepa. Si hace falta, también baja la resolución.
 - **BRAW** sin plugins de pago y en la GPU, con el motor oficial de Blackmagic que viene con **DaVinci Resolve** o **Blackmagic RAW Player** (gratuitos). Puede guardarlo en *Log* o pasarlo a *Rec.709*, y aplicar una **LUT .cube**.
 - Conserva timecode, metadatos, fechas y **todas las pistas de audio**.
+- Un clip que ya ocupa poco **nunca sale más grande** que el original.
 
 **Imagen**
 
@@ -288,6 +300,7 @@ Cambia el **tipo de archivo**: de MKV a MP4, de MP3 a WAV, de vídeo a GIF, de H
 - **Audio**: WAV, AIFF, FLAC, MP3, AAC y OGG, o sacar solo el audio de un vídeo. Puede **normalizar el volumen** para redes o TV.
 - **Fotos**: JPG, PNG, HEIC, TIFF y WEBP, conservando el EXIF.
 - **Recortar** el inicio y el final, y **copia de revisión** con timecode y marca.
+- **«Ponle este audio»**: pone una música o un doblaje a un vídeo sin volver a codificar la imagen.
 </details>
 
 ### Upscaler
@@ -306,6 +319,8 @@ Hace **más grandes y más nítidos** los vídeos y las fotos con la **inteligen
 <summary><b>Más detalles</b></summary>
 
 - **Vídeo**: ×2, ×4, a medida o *mejorar a la misma resolución* (ideal para vídeos hechos con IA que se ven blandos). También puede pasar de 24 a 60 fps y añadir grano de película.
+- **Tamaño a medida** sin deformar: **Encaja** (con bandas), **Rellena** (recorta) o **Estira**.
+- **De 24 a 25 fps** (o al revés) sin inventar fotogramas: el clip va un 4 % más rápido, con el audio ajustado.
 - **Fotos**: ×2, ×4 o a medida, con comparación antes / después. Los PNG **mantienen la transparencia**.
 - **Prueba de 5 s**: mira cómo queda un trozo antes de hacer el vídeo entero.
 - Conserva el timecode.
@@ -347,6 +362,8 @@ Intenta arreglar vídeos y audios que **no se abren**, por ejemplo cuando la cá
 <summary><b>Qué puede reparar</b></summary>
 
 **MP4 / MOV** sin índice o cortados, **RSV de Sony**, **WAV** con la cabecera dañada, **MP3** y, en general, cualquier vídeo o audio que se pueda leer.
+
+Si el archivo no es un vídeo (un texto, una página web o una foto con nombre de vídeo), te lo dice en lugar de intentar repararlo.
 </details>
 
 ### Subtítulos
@@ -437,6 +454,8 @@ Lee la **información de cada clip** (cámara, ISO, obturación, gamma, timecode
 - Alertas: fps variable, cámara lenta o rápida, clips sin timecode, audio desfasado y el clip distinto del resto.
 - **Analizar entero** avisa de archivos incompletos, saltos de tiempo, imagen congelada, negros, sobreexposición y, en el audio, silencio, saturación, canales idénticos y fase invertida. Nunca se hace mientras el DIT copia.
 - El CSV sigue las columnas y el orden de la tabla. El GPS solo sale si activas «Incluir el GPS al exportar».
+- Pestaña **Entrega**: comprueba si un vídeo está listo para **Reels, TikTok, YouTube o la tele** (volumen, tamaño, fps…).
+- Si un clip no se puede leer, te dice **por qué** (vacío, cortado o no es un vídeo) y, si está cortado, te envía al **Reparador**.
 </details>
 
 ### Historial
@@ -493,6 +512,8 @@ La primera vez, el Mac avisa de que no puede comprobar la app. Sale porque la ap
 - **Vuelta atrás automática.** Si una versión nueva no arranca, la app **vuelve sola a la anterior**.
 - **Complementos de fuentes oficiales.** ffmpeg, yt-dlp, deno, Gyroflow y los modelos de Whisper se descargan solo de sus webs oficiales y se comprueban antes de usarlos.
 - **Las herramientas pesadas van aparte.** Trabajan en un proceso separado: si una falla, la app y las copias del DIT siguen funcionando.
+- **Protegida contra la inyección de código** (*hardened runtime*): ningún otro programa del Mac puede meterse dentro de la app para aprovechar los permisos que le has dado.
+- **Archivos que te envían.** Un proyecto de Final Cut (FCPXML) no puede leer archivos de tu Mac, y los enlaces del Downloader nunca se interpretan como órdenes.
 
 Descarga la app **solo desde esta página** o desde el enlace que te pase Puig.
 
@@ -516,13 +537,107 @@ Porque no está notarizada por Apple. Te lo explicamos en [Seguridad](#seguridad
 La **Guía**, en el menú **Ayuda** (**⌘?**) o en el botón **?** de cada herramienta. **Acerca de Midnight Suite** y **Novedades**, en el menú **Midnight Suite** (arriba, al lado de la manzana).
 
 **Algo ha fallado. ¿Cómo pido ayuda?**
-Abre **Historial › Actividad**, elige lo que ha fallado y pulsa **Copiar el detalle**. También puedes pulsar **Copiar el registro** en **Ajustes › Actualizaciones**. Pégalo en un correo o un mensaje y envíaselo a Puig.
+Abre **Historial › Actividad**, elige lo que ha fallado y pulsa **Copiar el detalle**. Si la app se cerró sola, al volver a abrirla te propone crear un **paquete de diagnóstico** para enviarlo. También puedes pulsar **Copiar el registro** en **Ajustes › Actualizaciones**. Pégalo en un correo o un mensaje y envíaselo a Puig.
 
 ---
 
 ## Novedades
 
 Dentro de la app tienes la historia completa, versión a versión: menú **Midnight Suite › Novedades**.
+
+### Versión 3.0
+
+- DIT: más seguro en el festival. Un clip dañado (BRAW o de audio) ya no puede cerrar la app después de una copia, y un NAS que deja de responder ya no frena el resto de herramientas.
+- DIT: si quitas un disco a media copia, dice «el disco se ha desconectado» y «NO formatees la tarjeta». La línea «Ya copiada · nada nuevo» ahora cuenta cada disco por separado.
+- Comparador: el ✅ verde solo sale cuando se ha comprobado el contenido (checksum). Sin él, dice «mismos nombres y tamaños» en naranja. Los ascmhl e informes del DIT ya no salen en «Solo en B».
+- Info de clips, Compresor y Upscaler: si un clip no se puede leer, dicen por qué (vacío, cortado o no es un vídeo) y, si está cortado, te envían al Reparador.
+- Reparador: un archivo que no es un vídeo (un texto, una página web, una foto…) con nombre de vídeo ya no se diagnostica como grabación cortada.
+- Compresor: un clip que ya ocupa poco ya no sale más grande. Las fotos se comprimen en un proceso aparte (una foto dañada no detiene la app).
+- Upscaler: de 24 a 25 fps, si el audio no se puede ajustar, avisa en lugar de dejarlo desfasado.
+- Seguridad: un proyecto de Final Cut que te envíen ya no puede leer archivos de tu Mac, y la app está protegida para que ningún otro programa pueda inyectarle código.
+- Arreglos pequeños: «1 error» (no «1 errores»), nombres «nombre_2» en el Conversor y Separar clips con XML extraños.
+
+### Versión 2.8
+
+- DIT: si vuelves a poner una tarjeta que ya habías volcado, solo copia los clips nuevos y sigue en el mismo rollo (antes lo volvía a copiar todo).
+- DIT: la comprobación de clips ahora también revisa los BRAW y los WAV, con un botón «Reparar estos» que los envía al Reparador.
+- DIT: «Cierre de noche»: antes de recoger te dice qué tarjetas tienen menos de 2 copias, qué falta verificar y qué queda pendiente en el NAS.
+- DIT: avisa si el portátil va con batería, en modo de ahorro o con la tapa cerrada durante una copia. La prueba de velocidad del NAS dice si vas por Wi-Fi o por cable y qué versión de SMB usa.
+- DIT: al acabar el volcado se crea un evento de Final Cut y un CSV para DaVinci Resolve, con los clips ordenados por cámara, rollo y día.
+- Info de clips: pestaña nueva «Entrega», que comprueba si un vídeo está listo para Reels, TikTok, YouTube o la tele (volumen, tamaño, fps…).
+- Upscaler: el «Tamaño» ya no deforma la imagen. Puedes elegir Encaja (con bandas), Rellena (recorta) o Estira.
+- Upscaler: de 24 a 25 fps (o de 25 a 24) ya no se inventan fotogramas: el clip va un 4 % más rápido, con el audio ajustado. En la lista hay 23,976, 29,97 y 59,94.
+- Conversor: «Ponle este audio» pone una música o un doblaje a un vídeo sin volver a codificar la imagen.
+- Si la app se cierra sola, al abrirla de nuevo te propone crear un paquete de diagnóstico para enviarlo.
+- Estado en la barra de menús y en el Dock («DIT 64 % · 12 min») sin abrir la ventana. Las actualizaciones se descargan en segundo plano y se pueden instalar al salir de la app.
+- Más velocidad en todas partes: la app cuenta todos los tipos de núcleos de cada Mac (también los M5 y M6) y adapta el trabajo a la RAM. Conversor, Downloader y Reparador mantienen la imagen en la GPU, el Upscaler lee, mejora y guarda a la vez, y los stems trabajan con dos trozos a la vez.
+- Más velocidad: subtítulos «Pequeño» hasta 2 veces más rápidos, miniaturas de fotos RAW y WebP con peso máximo mucho más rápidos, y más trabajo a la vez en Separar clips, Info de clips (BRAW) y el Compresor (Mac Max/Ultra).
+
+### Versión 2.7
+
+- Seguridad: yt-dlp solo se actualiza si la versión nueva lleva la firma oficial de sus autores. Si no, se queda la que tienes.
+- Seguridad: la sesión de YouTube del Downloader ya no guarda las cookies de la cuenta de Google (Gmail, Drive), solo las de YouTube. Las de antes se borran solas al abrir la app.
+- Seguridad: las actualizaciones de la app se firman con una clave guardada en el Llavero del Mac de Pau, que pide permiso cada vez.
+
+### Versión 2.6
+
+- DIT más claro: cada estado de la tarjeta tiene un color y un icono fijos (verde = segura, ámbar = todavía no la formatees, rojo = error). Una copia «Rápida» ya no termina con el ✓ verde de una verificada.
+- DIT: al sacar una tarjeta, queda una línea con cómo terminó («A003 · Verificada en 2 destinos · 14:32»). Si conectas una tarjeta mientras estás en otra herramienta, sale un aviso para ir al DIT.
+- DIT: si en el destino ya hay la carpeta de alguien (p. ej. «Pau») y su nombre sale en los clips («20261024_PAU_0003»), la carpeta se elige sola.
+- DIT: si un disco o el NAS deja de responder durante la prueba de velocidad, la prueba se detiene y ya no impide copiar en él hasta reiniciar la app.
+- yt-dlp: «Reinstalar» ya no vuelve a la versión lenta; la opción de Ajustes para no actualizarlo ahora se respeta siempre, y una versión nueva no se usa hasta que lleva 1 día publicada (lo que se comprueba es que nadie la ha tocado en este Mac, no quién la ha hecho).
+- Separar clips: un nombre de clip muy largo con acentos ya no hace perder el clip terminado. Los CSV ya no se pueden abrir como fórmulas en Excel.
+- Más velocidad: el Downloader ya no vuelve a codificar un vídeo que ya es H.264 o H.265 (calidad Alta): se copia tal cual en unos segundos y sin perder calidad.
+- Más velocidad: el Compresor (Equilibrada, Ligera, Mbps y peso máximo), el Upscaler (Rápida y Sin IA) y Separar clips (H.264/HEVC) usan el codificador rápido de Apple. Archivo, Alta y Máxima, como siempre.
+- Más velocidad: Separar clips (ProRes) y el Conversor (audio y ProRes) hacen varios archivos a la vez.
+- Fluidez: el Comparador ya no se ralentiza copiando miles de archivos; los PDF y CSV del historial y del Comparador se hacen en segundo plano sin congelar la ventana; la vista previa de Subtítulos ya no redibuja toda la pantalla; el boost, al apagarse, ya no reconstruye la ventana (no pierdes el scroll ni el texto); con la ventana tapada la app refresca menos a menudo; el registro apunta cuando la ventana se cuelga.
+- «Detener todo» pregunta antes de detener en el Estabilizador, Audio, Separar clips y el Downloader.
+- Atajos nuevos: ⌥⌘1 Audio, ⌥⌘2 Separar clips, ⌥⌘3 Downloader; el Comparador empieza con ⌘↩.
+- Subtítulos: «Analizar el audio», «Hacer el vídeo» y «A Final Cut» siempre a la vista, fijos abajo.
+- Accesibilidad: VoiceOver dice la opción elegida y los deslizadores se mueven con las flechas; bordes más marcados con «Aumentar contraste».
+- La barra lateral ya no corta el Historial cuando la ventana es pequeña.
+- Subtítulos: la posición vertical (p. ej. 8 % desde abajo) ahora sale bien en Final Cut en cualquier tamaño, también en vídeos verticales 1080×1920, donde antes los subtítulos quedaban fuera del cuadro.
+- Downloader mucho más rápido: yt-dlp ahora arranca en 0,4 s en lugar de 3 s, y un enlace ya leído al pegarlo no se vuelve a leer. Un vídeo empieza a descargarse unos 10 segundos antes.
+- yt-dlp se actualiza solo desde la página oficial y, antes de usarlo, se comprueba que nadie ha tocado ninguno de sus archivos.
+- Downloader: un enlace de un «Mix» de YouTube (la radio de canciones parecidas) ahora descarga solo ese vídeo, no las 25–50 canciones del Mix. Va mucho más rápido.
+- Nueva herramienta: Separar clips. Del proyecto de Final Cut (XML) y su máster ProRes saca un archivo por clip en segundos, exacto al fotograma y sin recomprimir, con el nombre y el timecode de la cámara, y una lista en CSV.
+- Separar clips también puede recomprimir: H.264, HEVC o ProRes (LT, 422 y HQ), con bitrate automático o manual y tamaño original o personalizado.
+- Subtítulos: los títulos ya funcionan en Final Cut 11 (títulos normales cuando no está la plantilla «Subtitle») y «Añadir a la biblioteca» encuentra Final Cut Pro Creator Studio.
+
+### Versión 2.5
+
+- Subtítulos animados: tres estilos (Karaoke, Clásico y Una palabra) con vista previa que se reproduce. Puedes cambiar la letra, el color, el color de la palabra que se dice, el tamaño y la posición.
+- Tres salidas: vídeo transparente (HEVC) para poner encima del montaje, títulos con el aspecto del estilo, o «Títulos animados (editables)»: títulos de Final Cut 12 que se llenan de color palabra a palabra y que puedes editar.
+- El vídeo transparente se guarda en la carpeta «Subtítols animats», junto al vídeo (o en Películas › Midnight Suite), y al volver a hacerlo sustituye al anterior: Final Cut lo recoge con el tamaño y la posición que le hayas dado.
+- DIT: «Verificar» ya no puede dar por buena otra tarjeta con el mismo nombre; dos carpetas del mismo disco cuentan como una sola copia; un NAS que no responde ya no deja la copia colgada.
+- Subtítulos: proyectos de Final Cut que empiezan en 01:00:00:00, vídeos verticales de móvil y SRT con espacios funcionan bien; subtítulos animados un 33 % más rápidos.
+- Info de clips: más errores corregidos, exportación sin congelar la ventana y CSV con el orden de la tabla.
+- Seguridad: complementos solo desde el catálogo firmado, enlaces guardados sin datos de seguimiento.
+- Nueva herramienta: Info de clips. Arrastra clips, carpetas o una tarjeta y te dice todo lo que llevan: formato (XAVC S/HS), cámara, óptica, ISO, gamma, timecode y audio. Avisa de lo que no cuadra y del clip distinto del resto. «Analizar entero» busca negros, imágenes congeladas, saltos, sobreexposición y problemas de audio, con gráficos. Tabla para comparar y exportación en JSON, CSV y PDF (el GPS solo si lo pides).
+- Subtítulos: nueva calidad «🎯 Fiel en catalán» (cuando el idioma es catalán). El texto lo hace el modelo catalán del BSC y los tiempos de cada palabra, el Grande: mucho más fiel en catalán, sobre todo con ruido, y no se inventa frases. Unas 2× más lento. El modelo (1,1 GB) se descarga la primera vez.
+- Subtítulos animados: tres estilos nuevos (Karaoke, Clásico y Una palabra), con vista previa encima del vídeo. Se exportan a Final Cut como vídeo transparente encima del clip o como títulos editables.
+- Downloader: ahora puedes iniciar sesión en SoundCloud desde la app (como en Instagram y YouTube) para descargar lo que solo se ve con cuenta.
+
+### Versión 2.4
+
+- DIT: cada destino se puede activar o desactivar sin quitarlo de la lista (p. ej. dos carpetas del mismo disco). Al añadir una 2.ª carpeta en el mismo disco, «Añadirla y desactivar la otra».
+- DIT: con 2 o más tipos marcados (dron: MP4 + JPG), opción «Una subcarpeta por tipo» → DRON/MP4, DRON/JPG.
+- DIT: los tipos que desmarcas ya no impiden expulsar: la tarjeta sale en verde «sin LRF (desmarcados)» y la expulsión automática también funciona.
+- DIT: un disco duro o una carpeta arrastrados como origen ahora tienen botón «Expulsar» (y la X para quitarlos sin expulsar).
+- DIT: el recibo ASC MHL viene desactivado por defecto (se puede volver a activar en Ajustes › General).
+
+### Versión 2.3
+
+- Estabilizador: «Dos clips a la vez» vuelve a funcionar. El segundo clip ya no se queda «Esperando a que acabe el Estabilizador».
+- DIT: aviso si un disco de destino baja mucho de velocidad al copiar (puede ser sobrecalentamiento) y el firmware del disco en la «i».
+- Pasa el ratón por el logo MIDNIGHT de arriba a la izquierda: salen los 👾, como en «Acerca de», sin que se corten.
+- Vuelve la firma «Puig» abajo a la derecha del Inicio.
+- Nueva herramienta Audio: limpia la voz de entrevistas y vídeos (quita viento, público y zumbido) sin internet, y el sonido sigue cuadrado con el vídeo.
+- Audio: Voz de estudio, con EQ de voz, de-esser, compresor y volumen final a punto (Podcast −16, Broadcast −23 o Redes −14).
+- Audio: Voz y música, separa la voz de la música (también batería y bajo). El modelo se descarga la primera vez (79 MB).
+- Audio: prueba de 5 s para escuchar antes y después, y «Enviar a › Subtítulos» con la voz limpia.
+- Downloader: la sesión ahora es automática (solo se usa si la web la pide) y puedes iniciar sesión en Instagram y YouTube dentro de la propia app, sin depender de Chrome. Mensaje claro para las canciones con protección anticopia (DRM).
+- Subtítulos: arrastrar funciona también con Final Cut 11, y nueva opción de añadir a la biblioteca con clip compuesto.
 
 ### Versión 2.2
 
