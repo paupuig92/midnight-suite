@@ -6,7 +6,7 @@
 
 ### [⬇︎ Descargar para Mac](https://github.com/paupuig92/midnight-suite/releases/latest/download/Midnight-Suite.dmg)
 
-Mac con chip Apple (M1 o posterior) · macOS 14 o posterior · se actualiza sola
+Mac con chip Apple (M1 o posterior) · macOS 14 o posterior · se actualiza sola · versión actual: **4.0**
 
 [Instalación](#instalación) · [Requisitos](#requisitos) · [Herramientas](#herramientas) · [Seguridad](#seguridad) · [Ayuda](#ayuda) · [Novedades](#novedades)
 
@@ -14,7 +14,7 @@ Mac con chip Apple (M1 o posterior) · macOS 14 o posterior · se actualiza sola
 
 </div>
 
-Una app para Mac que junta todo lo que hace falta en un rodaje o en un festival: copiar tarjetas sin riesgo, comprimir, convertir, estabilizar, subtitular y mucho más. No hace falta saber de códecs ni usar la terminal: arrastras el archivo, pulsas un botón y listo.
+Una app para Mac con todo lo que hace falta en un rodaje o en un festival: copiar tarjetas sin riesgo, preparar los discos, sincronizar las cámaras, subtitular, comprimir y mucho más. No hace falta saber de códecs ni usar la terminal: arrastras el archivo, pulsas un botón y listo.
 
 | 🔒 Todo pasa en tu Mac | 🛡️ El original no se toca | 🔄 Se actualiza sola |
 |---|---|---|
@@ -36,7 +36,10 @@ Unos 5 minutos, y solo una vez.
 > **No pulses «Trasladar a la papelera»** en el aviso del paso 4. Ciérralo con el otro botón.
 
 > [!TIP]
-> Los complementos incluyen el modelo de los Subtítulos (unos 1,6 GB) y Gyroflow (unos 90 MB). Mejor instalarlos con buena conexión, antes de salir de la oficina.
+> Los complementos incluyen el modelo de los Subtítulos (hasta 1,6 GB) y Gyroflow (unos 90 MB). Mejor instalarlos con buena conexión, antes de salir de la oficina.
+
+> [!TIP]
+> **¿Portátil solo para el festival?** En **Ajustes › Herramientas visibles** elige el perfil **Festival**: la barra lateral deja solo lo que hace falta para el DIT.
 
 <details>
 <summary><b>Si algo no va bien</b></summary>
@@ -63,14 +66,17 @@ Unos 5 minutos, y solo una vez.
 
 | Herramienta | RAM mínima | Para varias a la vez | Además necesita |
 |---|---|---|---|
-| DIT · Comparador | 4 GB | 8 GB | — |
+| DIT · Discos · Comparador · Info de clips | 4 GB | 8 GB | — |
+| Sincronizar | 4 GB | 8 GB | ffmpeg (se instala solo) |
+| Separar clips | 4 GB | 8 GB | Espacio libre: tanto como el máster |
 | Conversor | 4 GB | 8 GB | ffmpeg |
 | Downloader | 4 GB | 8 GB | yt-dlp, deno y ffmpeg |
-| Compresor | 8 GB | 16 GB | ffmpeg recomendado · DaVinci Resolve (gratuito) para BRAW · 50 GB libres recomendados |
+| Subtítulos | 8 GB | 16 GB | ffmpeg · modelo de Whisper (hasta 1,6 GB) · 3 GB libres para los modelos |
+| Compresor | 8 GB | 16 GB | ffmpeg recomendado · DaVinci Resolve o Blackmagic RAW Player (gratuitos) para BRAW · 50 GB libres recomendados |
 | Reparador | 8 GB | 16 GB | ffmpeg (se instala solo) |
 | Estabilizador | 8 GB | 16 GB | Gyroflow · 50 GB libres recomendados |
 | Upscaler | 8 GB | 16 GB | macOS 26 · M3 o un Pro/Max/Ultra recomendado · 50 GB libres recomendados |
-| Subtítulos | 8 GB | 16 GB | ffmpeg · modelo de Whisper · 3 GB libres para los modelos |
+| Audio | 8 GB | 16 GB | Modelo de voz y música (se descarga solo la primera vez) |
 
 **Semáforo de memoria:** 🟢 todo normal · 🟡 una sola herramienta cada vez · 🔴 no empieza ninguna (cierra otras apps).
 **Modo boost ⚡:** da toda la potencia a una sola herramienta; las demás esperan en la cola.
@@ -80,8 +86,12 @@ Unos 5 minutos, y solo una vez.
 
 ## Herramientas
 
+Están agrupadas como en la barra lateral de la app: **Rodaje** (en el festival), **Edición** (para Final Cut y DaVinci) y **Taller** (el resto, en la oficina). Novedades, Guía, Acerca de y Nivel están abajo del todo.
+
 > [!CAUTION]
 > **Nunca borres una tarjeta** hasta que el DIT diga **«Ya puedes borrarla»**.
+
+### 🎬 Rodaje
 
 <table>
 <tr>
@@ -98,14 +108,14 @@ Copia las tarjetas a uno o varios discos y comprueba que cada copia es idéntica
 </details>
 </td>
 <td width="50%" valign="top">
-<img src="docs/img/03-comparador.jpg" alt="Comparador" width="100%"><br>
-<b>🔍 Comparador</b><br>
-Dice si dos carpetas tienen exactamente los mismos archivos.
+<img src="docs/img/18-discos.jpg" alt="Discos" width="100%"><br>
+<b>🗄️ Discos</b><br>
+Los discos conectados de un vistazo: qué tienen, cuánto espacio queda, su salud y su velocidad.
 <details><summary><b>Cómo se usa</b></summary>
 
-1. **A**: la carpeta original (por ejemplo, la tarjeta).
-2. **B**: la copia que quieres comprobar.
-3. Pulsa **Comparar**: rojo, falta o está mal; amarillo, tamaño distinto; verde, bien. El ✅ verde solo sale si marcas **Verificar el contenido (checksum)**.
+1. Conecta los SSD. Salen solos, con su formato y el espacio libre.
+2. **Prueba de velocidad** te dice si un disco sirve para el DIT. **Primeros auxilios** busca errores y los repara.
+3. **Formatear…** deja un SSD listo para el festival (exFAT, se lee en Mac y Windows). Hay que escribir el nombre para confirmar, y nunca deja tocar el disco interno, un NAS, un disco que esté usando el DIT ni uno con copias del DIT de las últimas 24 h.
 
 </details>
 </td>
@@ -119,100 +129,64 @@ Muestra cámara, ISO, timecode y audio de cada clip, y avisa de lo que falla ant
 
 1. Arrastra los clips o la carpeta de la tarjeta.
 2. Mira la **tabla**: en amarillo, lo que no coincide con el resto.
-3. Pulsa un clip para ver el detalle, o **Analizar entero**. Con **Exportar** sacas JSON, CSV o PDF.
+3. Pulsa un clip para ver el detalle, o **Analizar todo**. Con **Exportar** sacas JSON, CSV o PDF.
 
 </details>
 </td>
 <td width="50%" valign="top">
-<img src="docs/img/05-compresor.jpg" alt="Compresor" width="100%"><br>
-<b>🗜️ Compresor</b><br>
-Vídeos y fotos que ocupan mucho menos sin que se note, también BRAW.<br>
-<sub>BRAW necesita DaVinci Resolve o Blackmagic RAW Player (gratuitos).</sub>
+<img src="docs/img/03-comparador.jpg" alt="Comparador" width="100%"><br>
+<b>🔍 Comparador</b><br>
+Dice si dos carpetas tienen exactamente los mismos archivos.
 <details><summary><b>Cómo se usa</b></summary>
 
-1. Arrastra vídeos o fotos.
-2. Elige la calidad o el peso máximo (por ejemplo, 500 KB para una web).
-3. Pulsa **Comprimir**.
+1. **A**: la carpeta original (por ejemplo, la tarjeta).
+2. **B**: la copia que quieres comprobar.
+3. Pulsa **Comparar**: rojo, falta o está mal; amarillo, tamaño distinto; verde, bien. El ✅ verde solo sale si marcas **Verificar el contenido (checksum)**. Si el disco lleva el informe del DIT, lo usa para comprobarlo desde cualquier Mac.
 
 </details>
 </td>
 </tr>
+</table>
+
+<details>
+<summary><b>Lo esencial del DIT</b></summary>
+
+- La tarjeta se lee una sola vez y se escribe en todos los discos a la vez, con checksum xxHash64 (y MD5 si lo activas).
+- Antes de dar la tarjeta por buena, comprueba que cada clip se abre de verdad.
+- Con dos discos o más, «Ya puedes borrarla» solo sale cuando hay **dos copias verificadas en dos discos distintos**. Dos particiones del mismo SSD cuentan como uno.
+- Nunca sobrescribe nada. Si algo no se ha podido copiar o leer, lo dice y la tarjeta **no** se da por buena.
+- Si el lector deja de responder o sacas un disco a media copia, se detiene y avisa: «NO formatees la tarjeta».
+- Copiar a un NAS por red (SMB) también es seguro: al terminar cada clip, comprueba que el NAS lo deja leer.
+- Cada copia genera un informe PDF sellado, con los archivos, sus checksums y una miniatura de cada clip. También se guarda en cada disco.
+- **«¿Listo para el festival?»** mira si tienes 2 discos y su formato, y puede probarlos.
+
+</details>
+
+### ✂️ Edición
+
+<table>
 <tr>
 <td width="50%" valign="top">
-<img src="docs/img/06-conversor.jpg" alt="Conversor" width="100%"><br>
-<b>🔁 Conversor</b><br>
-Cambia el tipo de archivo: MKV a MP4, vídeo a GIF, HEIC a JPG…
+<img src="docs/img/19-sincronizar.jpg" alt="Sincronizar" width="100%"><br>
+<b>🎚️ Sincronizar</b><br>
+Sincroniza todas las cámaras de una noche con el audio bueno, y te lo deja montado en DaVinci o Final Cut. En sets de DJ, también corta la multicámara siguiendo la música.
 <details><summary><b>Cómo se usa</b></summary>
 
-1. Arrastra los archivos.
-2. Elige el formato (pestañas **Vídeo**, **Audio** o **Fotos**).
-3. Pulsa **Convertir**. Si pone **«Sin recodificar»**, tarda segundos y no pierde calidad.
+1. **Añadir carpeta** de cada cámara y la del audio bueno (la grabadora o la mesa). Con una Zoom, une Tr1 y Tr2 en un WAV estéreo sin pérdida, sin tocar los originales.
+2. Pulsa **Sincronizar**. Coloca cada clip por timecode, hora de grabación y sonido (precisión de ±½ fotograma) y te dice cuánto falta. Aguanta clips de 5 a 12 h.
+3. Revisa la línea de tiempo (Espacio para escuchar, M/S para mute/solo). Los clips dudosos salen marcados. Después, **Abrir en DaVinci** (multicámara a la hora real, o con **Cortes automáticos**: Tranquilo, Normal, Bestia o Automático) o **Abrir en Final Cut**.
 
 </details>
 </td>
-<td width="50%" valign="top">
-<img src="docs/img/07-upscaler.jpg" alt="Upscaler" width="100%"><br>
-<b>✨ Upscaler</b><br>
-Hace vídeos y fotos más grandes y nítidos con la IA de Apple.<br>
-<sub>Necesita macOS 26.</sub>
-<details><summary><b>Cómo se usa</b></summary>
-
-1. Arrastra vídeos o fotos (pestaña **Vídeo** o **Fotos**).
-2. Elige cuánto más grande: ×2, ×4 o un tamaño concreto.
-3. Pulsa **Ampliar**. La app te dice antes cuánto tardará.
-
-</details>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<img src="docs/img/08-estabilizador.jpg" alt="Estabilizador" width="100%"><br>
-<b>🚁 Estabilizador</b><br>
-Estabiliza clips de dron, GoPro y cámaras de acción con su giroscopio.<br>
-<sub>Usa Gyroflow: se instala con un botón, unos 90 MB.</sub>
-<details><summary><b>Cómo se usa</b></summary>
-
-1. Arrastra clips o carpetas. La app mira cuáles llevan datos del giroscopio.
-2. Elige el códec, el tamaño y la suavidad.
-3. Pulsa **Estabilizar** y verás cuánto falta. Con **Dos clips a la vez** va casi el doble de rápido.
-
-</details>
-</td>
-<td width="50%" valign="top">
-<img src="docs/img/09-reparador.jpg" alt="Reparador" width="100%"><br>
-<b>🩹 Reparador</b><br>
-Intenta arreglar vídeos y audios que no se abren, y te dice antes si se pueden salvar.
-<details><summary><b>Cómo se usa</b></summary>
-
-1. Arrastra el archivo (o una carpeta). La app te dice qué le pasa y si se puede salvar.
-2. Si puedes, añade un **clip bueno de la misma cámara** como referencia.
-3. Pulsa **Reparar**. Se crea una copia arreglada (`nombre_reparado`).
-
-</details>
-</td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <img src="docs/img/10-subtitulos.jpg" alt="Subtítulos" width="100%"><br>
 <b>💬 Subtítulos</b><br>
-Subtítulos automáticos y editables para Final Cut, y SRT para el resto de programas.
+Subtítulos automáticos para Final Cut, DaVinci y Premiere. En Final Cut, con la animación <b>Midnight Sub v1</b>: cada palabra aparece cuando se dice, 100 % editable.
 <details><summary><b>Cómo se usa</b></summary>
 
-1. Arrastra el **proyecto** desde Final Cut (o cualquier vídeo o audio).
-2. Elige el idioma (**catalán, castellano o inglés**) y pulsa **Analizar el audio**. Corrige lo que haga falta.
-3. Arrastra los subtítulos al inicio de la línea de tiempo (00:00), o pulsa **Añadir a la biblioteca**.
-
-</details>
-</td>
-<td width="50%" valign="top">
-<img src="docs/img/11-audio.jpg" alt="Audio" width="100%"><br>
-<b>🎙️ Audio</b><br>
-Limpia una voz, la deja como de estudio o la separa de la música, sin internet.
-<details><summary><b>Cómo se usa</b></summary>
-
-1. Arrastra audios o vídeos (WAV, MP3, MP4, MOV…).
-2. Elige **Limpieza de voz**, **Voz de estudio** o **Voz y música**.
-3. Pulsa el botón. Con 🎧 escuchas 5 s de prueba antes y después.
+1. Arrastra el **proyecto** desde Final Cut (o cualquier vídeo o audio) y elige el programa: Final Cut, DaVinci o Premiere.
+2. Elige el idioma (**Automático, catalán, castellano o inglés**) y pulsa **Analizar el audio**. Corrige lo que haga falta: las palabras dudosas salen en naranja.
+3. Ajusta el estilo (letra, tamaño, color, posición, 1–2 líneas) con la vista previa en directo y pulsa **Abrir en Final Cut**: crea el proyecto e instala la plantilla solo. Para DaVinci y Premiere, SRT o TXT.
 
 </details>
 </td>
@@ -231,33 +205,112 @@ Corta el máster de Final Cut en un archivo por clip, con su nombre y su timecod
 </details>
 </td>
 <td width="50%" valign="top">
-<img src="docs/img/13-downloader.jpg" alt="Downloader" width="100%"><br>
-<b>⬇️ Downloader</b><br>
-Descarga vídeo o música de YouTube, Instagram, TikTok, SoundCloud, Vimeo y más.<br>
-<sub>Instagram y algunos vídeos piden iniciar sesión.</sub>
-<details><summary><b>Cómo se usa</b></summary>
-
-1. Pega el enlace en la caja.
-2. Elige **vídeo** o **solo el audio** (entero o un trozo).
-3. Pulsa **Descargar**. Para Instagram, ten tu cuenta abierta en Chrome o Safari: la app usa esa sesión sola (también puedes elegir el navegador en **Sesión del navegador**).
-
-</details>
 </td>
 </tr>
 </table>
 
-<details>
-<summary><b>Lo esencial del DIT</b></summary>
+### 🛠️ Taller
 
-- La tarjeta se lee una sola vez y se escribe en todos los discos a la vez, con checksum xxHash64 (y MD5 si lo activas).
-- Antes de dar la tarjeta por buena, comprueba que cada clip se abre de verdad.
-- Con dos discos o más, «Ya puedes borrarla» solo sale cuando hay **dos copias verificadas**. Dos copias en el mismo disco cuentan como una.
-- Nunca sobrescribe nada. Si algo no se ha podido copiar o leer, lo dice y la tarjeta **no** se da por buena.
-- Si sacas un disco a media copia, avisa: «NO formatees la tarjeta».
-- Copiar a un NAS por red (SMB) también es seguro: al terminar cada clip, comprueba que el NAS lo deja leer.
-- Cada copia genera un informe PDF con los archivos, sus checksums y una miniatura de cada clip.
+<table>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/img/05-compresor.jpg" alt="Compresor" width="100%"><br>
+<b>🗜️ Compresor</b><br>
+Vídeos y fotos que ocupan mucho menos sin que se note, también BRAW y vídeos con transparencia.<br>
+<sub>BRAW necesita DaVinci Resolve o Blackmagic RAW Player (gratuitos).</sub>
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Arrastra vídeos o fotos.
+2. Elige la calidad o el peso máximo (por ejemplo, 500 KB para una web). Haz clic en un clip para darle sus propios ajustes.
+3. Pulsa **Comprimir**. Si algo no cuadra (duración, pistas de audio, timecode), la fila te avisa en naranja.
 
 </details>
+</td>
+<td width="50%" valign="top">
+<img src="docs/img/06-conversor.jpg" alt="Conversor" width="100%"><br>
+<b>🔁 Conversor</b><br>
+Cambia el tipo de archivo: MKV a MP4, vídeo a GIF, HEIC a JPG…
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Arrastra los archivos.
+2. Elige el formato (pestañas **Vídeo**, **Audio** o **Fotos**).
+3. Pulsa **Convertir**. Si pone **«Sin recodificar»**, tarda segundos y no pierde calidad.
+
+</details>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/img/09-reparador.jpg" alt="Reparador" width="100%"><br>
+<b>🩹 Reparador</b><br>
+Intenta arreglar vídeos y audios que no se abren, y te dice antes si se pueden salvar.
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Arrastra el archivo (o una carpeta). La app te dice qué le pasa y si se puede salvar.
+2. Si puedes, añade un **clip bueno de la misma cámara** como referencia.
+3. Pulsa **Reparar**. Se crea una copia arreglada (`nombre_reparado`).
+
+</details>
+</td>
+<td width="50%" valign="top">
+<img src="docs/img/08-estabilizador.jpg" alt="Estabilizador" width="100%"><br>
+<b>🚁 Estabilizador</b><br>
+Estabiliza clips de dron, GoPro, Insta360 y cámaras de acción con su giroscopio.<br>
+<sub>Usa Gyroflow: se instala con un botón, unos 90 MB.</sub>
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Arrastra clips o carpetas. La app mira cuáles llevan datos del giroscopio (los que no, se pueden **Analizar la imagen**).
+2. Elige el códec, el tamaño, la suavidad y el recorte.
+3. Pulsa **Estabilizar** y verás cuánto falta. Con **Dos clips a la vez** va casi el doble de rápido.
+
+</details>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/img/07-upscaler.jpg" alt="Upscaler" width="100%"><br>
+<b>✨ Upscaler</b><br>
+Hace vídeos y fotos más grandes y nítidos con IA.<br>
+<sub>Necesita macOS 26.</sub>
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Arrastra vídeos o fotos (pestaña **Vídeo** o **Fotos**).
+2. Elige cuánto más grande (×2, ×4 o un tamaño concreto) y el **Estilo**: **Natural** (la IA de Apple, sin cambiar el aspecto) o **Limpio** (quita compresión y ruido, ideal para clips de IA).
+3. Pulsa **Ampliar**. La app te dice antes cuánto tardará.
+
+</details>
+</td>
+<td width="50%" valign="top">
+<img src="docs/img/11-audio.jpg" alt="Audio" width="100%"><br>
+<b>🎙️ Audio</b><br>
+Limpia una voz, la deja como de estudio, la separa de la música o une Tr1 y Tr2 en estéreo. Sin internet y sin perder calidad (32 bits float se queda en 32 float).
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Arrastra audios o vídeos (WAV, MP3, MP4, MOV…).
+2. Elige **Limpieza de voz**, **Voz de estudio**, **Voz y música** o **Unir L/R**.
+3. Pulsa el botón. Con 🎧 escuchas 5 s de prueba antes y después.
+
+</details>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/img/13-downloader.jpg" alt="Downloader" width="100%"><br>
+<b>⬇️ Downloader</b><br>
+Descarga vídeo o música de YouTube, Instagram, TikTok, SoundCloud, Vimeo y más, también carruseles de fotos.<br>
+<sub>Instagram y algunos vídeos piden iniciar sesión.</sub>
+<details><summary><b>Cómo se usa</b></summary>
+
+1. Pega el enlace en la caja.
+2. Elige **vídeo** o **solo el audio** (entero o un trozo). En un carrusel, una diapositiva o todas.
+3. Pulsa **Descargar**. Para Instagram, ten tu cuenta abierta en Chrome o Safari: la app usa esa sesión sola. Si un SoundCloud tiene DRM, te propone la misma canción de YouTube.
+
+</details>
+</td>
+<td width="50%" valign="top">
+</td>
+</tr>
+</table>
 
 ### Y además
 
@@ -266,10 +319,10 @@ Descarga vídeo o música de YouTube, Instagram, TikTok, SoundCloud, Vimeo y má
 <td width="50%" valign="top">
 <img src="docs/img/14-historial.jpg" alt="Historial" width="100%"><br>
 <b>📋 Historial</b><br>
-Todo lo que ha hecho la app, con informes en PDF y «¿Dónde está este clip?».
+Todo lo que ha hecho la app, con informes en PDF y «¿Dónde está este clip?». Cada trabajo guarda una ficha con el Mac, el clip, los ajustes y el error real si falla.
 <details><summary><b>Cómo se usa</b></summary>
 
-**Copias del DIT** con su informe PDF · **Todas las herramientas**: trabajos y horas de cada una · **¿Dónde está este clip?** · **Copiar el detalle** para enviar un error.
+**Copias del DIT** con su informe PDF · **Todas las herramientas**: trabajos y horas de cada una · **¿Dónde está este clip?** · **Copiar para Claude**: la ficha de un trabajo (o de todos los filtrados), lista para pegar y saber qué ha pasado.
 
 </details>
 </td>
@@ -281,14 +334,14 @@ Los trabajos en curso, «Volcar» para tarjetas nuevas y acceso rápido a las he
 </tr>
 <tr>
 <td width="50%" valign="top">
-<img src="docs/img/15-guia.jpg" alt="Guía" width="100%"><br>
-<b>📖 Guía</b><br>
-Cada herramienta con sus pasos numerados y un buscador. Menú <b>Ayuda</b> (⌘?).
+<img src="docs/img/20-nivel.jpg" alt="Nivel" width="100%"><br>
+<b>🏆 Nivel</b><br>
+Ganas puntos usando la app: 10 niveles, insignias (y alguna sorpresa escondida 🕵️), horas por herramienta y tu año.
 </td>
 <td width="50%" valign="top">
-<img src="docs/img/16-novedades.jpg" alt="Novedades" width="100%"><br>
-<b>🆕 Novedades</b><br>
-La historia completa de la app, versión a versión.
+<img src="docs/img/15-guia.jpg" alt="Guía" width="100%"><br>
+<b>📖 Guía y Novedades</b><br>
+Cada herramienta con sus pasos y un buscador (menú <b>Ayuda</b>, ⌘?, o el botón <b>?</b> de cada herramienta), y la historia completa de la app, versión a versión.
 </td>
 </tr>
 </table>
@@ -303,9 +356,11 @@ Si hay una copia del DIT o una herramienta trabajando, la app espera a que termi
 
 El Mac avisa la primera vez porque la app **no está notarizada por Apple** (hace falta una cuenta de desarrollador de pago). Esto es lo que sí tiene:
 
-- **Actualizaciones firmadas** (Ed25519). La app no instala nada que no esté firmado por Puig.
+- **Actualizaciones firmadas** (Ed25519). La app solo descarga versiones de este GitHub y no instala nada que no esté firmado por Puig.
+- **Comprueba que es la original** firmada por Midnight.
 - **Vuelta atrás automática** si una versión nueva no arranca.
-- **Complementos comprobados** antes de usarlos.
+- **Informes del DIT sellados**: si alguien los cambia, se nota.
+- **Complementos y programas externos comprobados** antes de usarlos.
 - **Herramientas pesadas en un proceso aparte:** si una falla, la app y las copias del DIT siguen funcionando.
 
 Descarga la app **solo desde esta página** o desde el enlace que te pase Puig.
@@ -314,14 +369,22 @@ Descarga la app **solo desde esta página** o desde el enlace que te pase Puig.
 
 **¿Se sube algo a internet?** Tus vídeos, no. La app se conecta para buscar actualizaciones, descargar complementos y, en el Downloader, bajar lo que le pidas.
 
-**¿Algo ha fallado?** Abre **Historial › Actividad**, elige lo que ha fallado, pulsa **Copiar el detalle** y envíaselo a Puig. Si la app se cerró sola, al abrirla te propone crear un paquete de diagnóstico.
+**¿Algo ha fallado?** Abre el **Historial**, elige lo que ha fallado, pulsa **Copiar para Claude** (o **Copiar el detalle**) y envíaselo a Puig. Si la app se cerró sola, al abrirla te propone crear un paquete de diagnóstico.
 
 ## Novedades
 
-- **Diseño «Boira» en todas partes:** colores, letra y tarjetas iguales en todas las pantallas, con icono nuevo y una Guía renovada.
-- **Barra de menús:** panel nuevo con las alas de Midnight y los trabajos en curso.
-- **Contador de uso:** trabajos y horas de cada herramienta en el Historial.
-- **Monitor del sistema:** temperatura, ventiladores, uso de cada núcleo y velocidad de los discos.
+**4.0**
+- **Historial con ficha de cada trabajo** y botón **«Copiar para Claude»** para saber qué ha pasado.
+- **Niveles más fáciles** y alguna sorpresa escondida. **Guía** al día con todas las herramientas.
+
+**3.9**
+- **Barra lateral nueva:** Rodaje, Edición, Taller e Historial, todo a la vista.
+- **Sincronizar:** estéreo de la Zoom (Tr1 + Tr2) sin pérdida y **Cortes automáticos** para sets de DJ.
+- **Audio sin pérdida:** «Unir L/R», 32 bits float y timecode conservados.
+- **DIT más estricto:** las 2 copias tienen que ser en 2 discos distintos.
+
+**Antes, en la 3.x**
+- **Subtítulos** con Midnight Sub v1 para Final Cut (3.8), **Discos** (3.6), **Sincronizar** (3.5) y **Nivel** (3.7).
 
 La historia completa está en la app: menú **Midnight Suite › Novedades**.
 
